@@ -20,6 +20,7 @@ This repo uses direct skill folders for local setup and experimentation.
 git clone https://github.com/hjplumtree/hjkit.git
 cd hjkit
 ./install.sh
+```
 
 This installer:
 
