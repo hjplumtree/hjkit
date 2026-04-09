@@ -22,7 +22,8 @@ Workflow:
 - Fix spacing before adding new visual elements.
 - Fix CTA prominence before ornamental detail.
 - Preserve strong parts of the current design.
-- Compare against `./examples/` when a matching structural baseline exists.
+- Compare against the hjkit reference examples in `project-template/examples/` when a matching structural baseline exists.
+- Prefer the project's existing shadcn/ui components over raw elements when an installed primitive exists.
 - If the screen is structurally weak, change layout and grouping first.
 - If attention is scattered, adjust hierarchy, color, and CTA.
 - If density is wrong, adjust spacing and grouping.
@@ -56,6 +57,7 @@ Rules:
 - Strengthen the primary action before adding new decorative elements.
 - If density is wrong, adjust grouping and spacing before visual styling.
 - Use the closest example composition as a reference, not a template.
+- If a shadcn/ui component already solves the problem, use it instead of inventing a local primitive.
 
 Output format:
 1. Overall read

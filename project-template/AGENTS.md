@@ -13,13 +13,13 @@ UI must match the product's intent, density, and workflow.
 ## Process
 1. Read `DESIGN_SYSTEM.md` first.
 2. Identify the screen type.
-3. Use `components/` before writing raw elements.
+3. Use the project's existing shadcn/ui and Tailwind stack before writing raw elements.
 4. Rebuild structure before polishing if the screen feels weak.
 5. Refine spacing, hierarchy, and grouping.
 
 ## Stack
-- Use the project's existing stack.
-- Default examples may assume Next.js, Tailwind CSS, shadcn/ui, and lucide-react.
+- Prefer the project's existing stack.
+- Default examples assume shadcn/ui and Tailwind CSS.
 - Override these assumptions per project when needed.
 
 ## Rules
@@ -36,9 +36,10 @@ UI must match the product's intent, density, and workflow.
 
 ## Read first
 - `DESIGN_SYSTEM.md`
+- `project-template/examples/`
 
 ## Avoid
 - Too many cards.
 - Flat empty UI.
 - Centered-everything layouts.
-- Raw elements where a project primitive exists.
+- Raw elements where a shadcn/ui component exists.

@@ -1,6 +1,6 @@
 # Examples
 
-These are reference compositions for the installed `components/` set.
+These are reference compositions for the repo-local `project-template/components/` set.
 
 Use them as:
 - structural baselines for new screens
@@ -14,3 +14,4 @@ Included examples:
 - `hjkit/SettingsExample.tsx`
 
 They are intentionally small and framework-agnostic enough to adapt into a real app.
+They are reference only and are not installed into target projects.

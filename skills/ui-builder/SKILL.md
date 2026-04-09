@@ -19,13 +19,12 @@ Workflow:
 - If information is missing, infer conservatively and state assumptions briefly.
 
 Before Building:
-- Check `./components/` for available primitives and patterns.
-- Check `./examples/` for the closest matching composition when available.
+- Check the project's existing shadcn/ui components and Tailwind setup first.
+- Check the hjkit reference examples in `project-template/examples/` for the closest matching composition when available.
 - Use `PageShell` as the outermost wrapper when available.
-- Use `Panel` for grouped content blocks.
+- Use the closest existing project components before introducing new abstractions.
 - Use `PrimaryButton` only once per screen.
-- Prefer project primitives over raw elements.
-- If a required primitive is missing, add it before building the screen.
+- Prefer established UI primitives over raw elements.
 
 2. Explore
 - Propose exactly 2 directions by default.
@@ -77,6 +76,7 @@ Rules:
 - If the screen feels generic, the structure is wrong.
 - Build with reusable components first, raw elements last.
 - If an example composition exists for the screen type, use it as the structural baseline.
+- If a shadcn/ui component already covers the need, prefer it over a custom primitive.
 
 Final:
 UI must feel like a real shipped product.
