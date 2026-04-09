@@ -1,6 +1,7 @@
 interface:
   display_name: "HJKit UI Builder"
-  short_description: "Create product UI from minimal input"
+  short_description: "Create new product UI with strong direction"
+  default_prompt: "Use $hjkit-ui-builder to design a new product UI screen."
 
 policy:
   allow_implicit_invocation: false

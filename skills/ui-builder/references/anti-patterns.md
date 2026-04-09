@@ -1,5 +1,7 @@
 - Avoid centered-everything landing layouts.
 - Avoid generic 3-card SaaS feature sections unless clearly justified.
+- Avoid cosmetic variants of the same layout.
 - Avoid excessive badges and gradients.
 - Avoid empty chart placeholders.
-- Avoid weak primary actions.
+- Avoid weak or hesitant primary actions.
+- Avoid screens that could belong to any product.
