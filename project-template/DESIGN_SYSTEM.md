@@ -1,5 +1,10 @@
 # Design System
 
+## Purpose
+This file defines the UI contract the target project should follow when Codex
+creates or improves screens. It is intentionally opinionated so output stays
+consistent, structured, and shipped-looking.
+
 ## Core Principles
 - Build UI that feels deliberate, structured, and shipped.
 - Prefer structural fixes over cosmetic fixes.

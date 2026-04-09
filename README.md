@@ -34,6 +34,10 @@ This copies the project templates, links skills into
 The design references and example compositions stay in this repository and are
 used as read-only guidance by the skills.
 
+If `AGENTS.md` or `DESIGN_SYSTEM.md` already exist in the target project,
+`setup --repo` replaces them with the hjkit template files and keeps backups
+with `.bak.*` suffixes.
+
 The project-local `.agents/skills` links are for that repo only. The shared
 user-level install lives in `~/.codex/skills`.
 
@@ -60,6 +64,16 @@ Use the hjkit-ui-review skill.
 
 Improve this UI:
 [paste code or describe the current screen]
+```
+
+For live pages, you can also give a URL or screenshot first and let the skill
+infer what is wrong:
+
+```text
+Use the hjkit-ui-review skill.
+
+URL: http://localhost:7777
+Goal: make it feel more intentional and shipped
 ```
 
 ### Review UI quality

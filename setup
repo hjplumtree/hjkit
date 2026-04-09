@@ -71,6 +71,15 @@ install_file_with_backup() {
   echo "Installed file: $target_file"
 }
 
+install_project_file_with_backup() {
+  local source_file="$1"
+  local target_file="$2"
+
+  backup_if_exists "$target_file"
+  cp "$source_file" "$target_file"
+  echo "Installed file: $target_file"
+}
+
 ensure_project_gitignore_entry() {
   local gitignore_file="$1"
   local entry="$2"
@@ -114,8 +123,8 @@ cleanup_legacy_user_links
 
 if [ -n "$PROJECT_PATH" ]; then
   mkdir -p "$PROJECT_PATH"
-  install_file_with_backup "$ROOT_DIR/project-template/AGENTS.md" "$PROJECT_PATH/AGENTS.md"
-  install_file_with_backup "$ROOT_DIR/project-template/DESIGN_SYSTEM.md" "$PROJECT_PATH/DESIGN_SYSTEM.md"
+  install_project_file_with_backup "$ROOT_DIR/project-template/AGENTS.md" "$PROJECT_PATH/AGENTS.md"
+  install_project_file_with_backup "$ROOT_DIR/project-template/DESIGN_SYSTEM.md" "$PROJECT_PATH/DESIGN_SYSTEM.md"
 
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   mkdir -p "$PROJECT_SKILLS_DIR"
@@ -132,7 +141,7 @@ echo "  - $ROOT_DIR/skills/ui-builder"
 echo "  - $ROOT_DIR/skills/ui-review"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
-echo "  - project template AGENTS.md and DESIGN_SYSTEM.md when --repo is used"
+echo "  - project template AGENTS.md / DESIGN_SYSTEM.md when --repo is used"
 echo
 echo "Next:"
 echo "1. In Codex, use hjkit-ui-builder or hjkit-ui-review."
