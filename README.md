@@ -9,12 +9,6 @@ A compact Codex workflow for generating and improving product UI.
 * a lightweight design system reference
 * reusable skills for building and reviewing UI
 
-## Quick Start
-
-```text
-Install hjkit, then use the hjkit-ui-builder skill.
-```
-
 ## Install
 
 ```bash
