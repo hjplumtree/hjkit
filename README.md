@@ -88,7 +88,15 @@ If symlinks are unavailable in your environment, copy the skill folders manually
 
 ## Add to a project
 
-For each project, copy:
+Run this once per project:
+
+```bash
+./setup --repo /path/to/your-project
+```
+
+This copies project template files and links skills for repo-local discovery.
+
+If you want to do it manually, copy:
 
 * `project-template/AGENTS.md` -> `your-project/AGENTS.md`
 * `project-template/DESIGN_SYSTEM.md` -> `your-project/DESIGN_SYSTEM.md`
