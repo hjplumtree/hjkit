@@ -25,7 +25,7 @@ Workflow:
 - If information is missing, infer conservatively and state assumptions briefly.
 - Check the project's existing shadcn/ui components and Tailwind setup first.
 - If the project has `components/` or `examples/` directories, use the closest matching local composition as the structural baseline.
-- Use `PageShell` as the outermost wrapper when available.
+- Wrap the screen in the outermost layout shell the project provides, such as `PageShell`, `layout.tsx`, or an equivalent wrapper.
 - Use the closest existing project components before introducing new abstractions.
 - Use `PrimaryButton` only once per screen.
 - Prefer established UI primitives over raw elements.
@@ -53,6 +53,9 @@ Screen expectations:
 4. Build
 - Build the strongest direction, not a compromise between options.
 - If the first draft feels weak during construction, change the structure before adding detail.
+- Describe the final composition in plain language.
+- Avoid technical review phrases like "improved density balance" or "strong hierarchy".
+- Prefer product language such as "the main action sits at the top and nothing else competes with it."
 - Use strong hierarchy.
 - Use clean spacing.
 - Use reusable components.

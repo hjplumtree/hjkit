@@ -77,6 +77,11 @@ Workflow:
 - Is the primary action singular and obvious?
 - Did we preserve what already worked?
 - Did we avoid over-normalizing a distinctive layout?
+- Are the required screen-type states present?
+  - Dashboard: empty, loading, error, and scanable default state.
+  - Landing: CTA above the fold and clear fallback state if content is sparse.
+  - Tool: empty, loading, error, and result states.
+  - Settings: clear save path, validation, and error handling.
 - Does the result feel like a shipped product rather than a template?
 
 Rules:
