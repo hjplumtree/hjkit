@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SKILL_NAMES=("ui-builder" "ui-review")
 HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
-LEGACY_HJKIT_STORE_DIR="$HOME/.codex/.agent/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 PROJECT_PATH=""
 
@@ -28,31 +28,31 @@ remove_path() {
   rm -rf "$path"
 }
 
-remove_path "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-remove_path "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
-remove_path "$HJKIT_STORE_DIR/ui-builder"
-remove_path "$HJKIT_STORE_DIR/ui-review"
-remove_path "$LEGACY_HJKIT_STORE_DIR/ui-builder"
-remove_path "$LEGACY_HJKIT_STORE_DIR/ui-review"
+# Legacy path from older installs: ~/.codex/.agent/skills/hjkit
+
+for skill_name in "${SKILL_NAMES[@]}"; do
+  remove_path "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
+  remove_path "$HJKIT_STORE_DIR/$skill_name"
+done
 
 if [ -n "$PROJECT_PATH" ]; then
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
-  remove_path "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  remove_path "$PROJECT_SKILLS_DIR/hjkit-ui-review"
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    remove_path "$PROJECT_SKILLS_DIR/hjkit-$skill_name"
+  done
   rmdir "$PROJECT_SKILLS_DIR" 2>/dev/null || true
   rmdir "$PROJECT_PATH/.agents" 2>/dev/null || true
 fi
 
 echo "✅ Removed:"
-echo "  - $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-echo "  - $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
-echo "  - $HJKIT_STORE_DIR/ui-builder"
-echo "  - $HJKIT_STORE_DIR/ui-review"
-echo "  - $LEGACY_HJKIT_STORE_DIR/ui-builder"
-echo "  - $LEGACY_HJKIT_STORE_DIR/ui-review"
+for skill_name in "${SKILL_NAMES[@]}"; do
+  echo "  - $OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
+  echo "  - $HJKIT_STORE_DIR/$skill_name"
+done
 if [ -n "$PROJECT_PATH" ]; then
-  echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-builder"
-  echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-review"
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    echo "  - $PROJECT_PATH/.agents/skills/hjkit-$skill_name"
+  done
 fi
 echo
 echo "Note: uninstall does not automatically restore backups."

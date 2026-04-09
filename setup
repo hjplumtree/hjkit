@@ -2,8 +2,14 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SKILL_NAMES=("ui-builder" "ui-review")
 FORCE=0
 PROJECT_PATH=""
+PROJECT_SKILLS_DIR=""
+
+# Paths
+HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
+OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -25,9 +31,6 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
-
-HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
-OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
 mkdir -p "$HJKIT_STORE_DIR"
 mkdir -p "$OFFICIAL_SKILLS_DIR"
@@ -105,10 +108,10 @@ link_skill_discovery() {
   ln -s "$target_dir" "$link_path"
 }
 
-install_skill_store "ui-builder"
-install_skill_store "ui-review"
-link_skill_discovery "$HJKIT_STORE_DIR/ui-builder" "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-link_skill_discovery "$HJKIT_STORE_DIR/ui-review" "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
+for skill_name in "${SKILL_NAMES[@]}"; do
+  install_skill_store "$skill_name"
+  link_skill_discovery "$HJKIT_STORE_DIR/$skill_name" "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
+done
 
 if [ -n "$PROJECT_PATH" ]; then
   mkdir -p "$PROJECT_PATH"
@@ -117,8 +120,9 @@ if [ -n "$PROJECT_PATH" ]; then
 
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   mkdir -p "$PROJECT_SKILLS_DIR"
-  link_skill_discovery "$HJKIT_STORE_DIR/ui-builder" "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  link_skill_discovery "$HJKIT_STORE_DIR/ui-review" "$PROJECT_SKILLS_DIR/hjkit-ui-review"
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    link_skill_discovery "$HJKIT_STORE_DIR/$skill_name" "$PROJECT_SKILLS_DIR/hjkit-$skill_name"
+  done
   echo "Repo-local skill links created in: $PROJECT_SKILLS_DIR"
 
   ensure_project_gitignore_entry "$PROJECT_PATH/.gitignore" ".agents/"
