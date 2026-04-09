@@ -28,7 +28,9 @@ and leaves `~/.codex/AGENTS.md` untouched.
 ```
 
 This copies the project templates, links skills into
-`your-project/.agents/skills`, and adds `.agents/` to the target project's
+`your-project/.agents/skills`, copies starter components into
+`your-project/components`, copies example compositions into
+`your-project/examples/hjkit`, and adds `.agents/` to the target project's
 `.gitignore`.
 
 The project-local `.agents/skills` links are for that repo only. The shared

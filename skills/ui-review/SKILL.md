@@ -22,7 +22,8 @@ Workflow:
 - Fix spacing before adding new visual elements.
 - Fix CTA prominence before ornamental detail.
 - Preserve strong parts of the current design.
-- If the screen is structurally weak, change layout and grouping.
+- Compare against `./examples/` when a matching structural baseline exists.
+- If the screen is structurally weak, change layout and grouping first.
 - If attention is scattered, adjust hierarchy, color, and CTA.
 - If density is wrong, adjust spacing and grouping.
 - If type is doing the wrong job, change the type system.
@@ -51,6 +52,10 @@ Rules:
 - Keep product logic intact, but feel free to change the visual hierarchy aggressively.
 - Do not change product logic.
 - Only improve design quality.
+- Prefer structural fixes over polish when the first read feels generic.
+- Strengthen the primary action before adding new decorative elements.
+- If density is wrong, adjust grouping and spacing before visual styling.
+- Use the closest example composition as a reference, not a template.
 
 Output format:
 1. Overall read

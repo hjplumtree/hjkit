@@ -18,6 +18,15 @@ Workflow:
 - Name what would make this feel like a shipped product rather than a prototype.
 - If information is missing, infer conservatively and state assumptions briefly.
 
+Before Building:
+- Check `./components/` for available primitives and patterns.
+- Check `./examples/` for the closest matching composition when available.
+- Use `PageShell` as the outermost wrapper when available.
+- Use `Panel` for grouped content blocks.
+- Use `PrimaryButton` only once per screen.
+- Prefer project primitives over raw elements.
+- If a required primitive is missing, add it before building the screen.
+
 2. Explore
 - Propose exactly 2 directions by default.
 - Use 3 only when the problem truly needs a third option.
@@ -65,6 +74,9 @@ Rules:
 - Prefer one strong primary action per screen.
 - Prefer clarity over decoration.
 - If the problem needs it, change the layout rather than polishing the current one.
+- If the screen feels generic, the structure is wrong.
+- Build with reusable components first, raw elements last.
+- If an example composition exists for the screen type, use it as the structural baseline.
 
 Final:
 UI must feel like a real shipped product.
