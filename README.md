@@ -167,10 +167,17 @@ chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
+If you used `--repo`, uninstall the project-local links too:
+
+```bash
+./uninstall.sh --repo /path/to/your-project
+```
+
 Note:
 
 * uninstall removes installed skills and symlinks only
 * project files copied with `--repo` are not removed automatically
+* repo-local `.agents/skills` links are removed only when you pass the same `--repo` path
 * uninstall does not automatically restore backups
 * uninstall does not preserve manual edits made after installation
 
