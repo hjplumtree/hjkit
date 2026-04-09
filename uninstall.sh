@@ -2,7 +2,6 @@
 set -euo pipefail
 
 SKILL_NAMES=("ui-builder" "ui-review")
-HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 PROJECT_PATH=""
 
@@ -28,32 +27,44 @@ remove_path() {
   rm -rf "$path"
 }
 
-# Legacy path from older installs was ~/.codex/.agent/skills/hjkit; this
-# script only removes the paths created by the current setup flow.
+remove_current_install() {
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    remove_path "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
+  done
+}
 
-for skill_name in "${SKILL_NAMES[@]}"; do
-  remove_path "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
-  remove_path "$HJKIT_STORE_DIR/$skill_name"
-done
+remove_project_links() {
+  local project_skills_dir="$1"
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    remove_path "$project_skills_dir/hjkit-$skill_name"
+  done
+  rmdir "$project_skills_dir" 2>/dev/null || true
+}
+
+remove_current_install
+
+if [ -d "$OFFICIAL_SKILLS_DIR" ]; then
+  rmdir "$OFFICIAL_SKILLS_DIR" 2>/dev/null || true
+  rmdir "$(dirname "$OFFICIAL_SKILLS_DIR")" 2>/dev/null || true
+fi
 
 if [ -n "$PROJECT_PATH" ]; then
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
-  for skill_name in "${SKILL_NAMES[@]}"; do
-    remove_path "$PROJECT_SKILLS_DIR/hjkit-$skill_name"
-  done
-  rmdir "$PROJECT_SKILLS_DIR" 2>/dev/null || true
+  remove_project_links "$PROJECT_SKILLS_DIR"
   rmdir "$PROJECT_PATH/.agents" 2>/dev/null || true
 fi
+
+# Legacy cleanup only: older installs copied skills into ~/.codex/.agents/skills/hjkit.
+remove_path "$HOME/.codex/.agents/skills/hjkit"
+remove_path "$HOME/.codex/.agent/skills/hjkit"
 
 echo "✅ Removed:"
 for skill_name in "${SKILL_NAMES[@]}"; do
   echo "  - $OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
-  echo "  - $HJKIT_STORE_DIR/$skill_name"
 done
 if [ -n "$PROJECT_PATH" ]; then
-  for skill_name in "${SKILL_NAMES[@]}"; do
-    echo "  - $PROJECT_PATH/.agents/skills/hjkit-$skill_name"
-  done
+  echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-builder"
+  echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-review"
 fi
 echo
 echo "Note: uninstall does not automatically restore backups."

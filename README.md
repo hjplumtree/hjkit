@@ -12,15 +12,14 @@ A compact Codex workflow for generating and improving product UI.
 ## Install
 
 ```bash
-git clone --single-branch --depth 1 https://github.com/hjplumtree/hjkit.git ~/.codex/.agents/skills/hjkit
-cd ~/.codex/.agents/skills/hjkit
+git clone --single-branch --depth 1 https://github.com/hjplumtree/hjkit.git
+cd hjkit
 chmod +x setup
 ./setup
 ```
 
-This stores source files under `~/.codex/.agents/skills/hjkit`, creates
-discovery links in `~/.agents/skills`, and leaves `~/.codex/AGENTS.md`
-untouched.
+This keeps the skill source in `skills/`, links it into `~/.agents/skills`,
+and leaves `~/.codex/AGENTS.md` untouched.
 
 ## Add to a project
 

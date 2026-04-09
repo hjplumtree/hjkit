@@ -8,10 +8,9 @@ PROJECT_PATH=""
 PROJECT_SKILLS_DIR=""
 
 # Paths:
-# - source install root: where hjkit stores its canonical skill copies
+# - source root: canonical skill source inside this repo
 # - user discovery root: where Codex finds skills after local install
 # - project discovery root: created only when --repo is used
-HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
 while [[ $# -gt 0 ]]; do
@@ -35,7 +34,6 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-mkdir -p "$HJKIT_STORE_DIR"
 mkdir -p "$OFFICIAL_SKILLS_DIR"
 
 backup_if_exists() {
@@ -89,31 +87,18 @@ ensure_project_gitignore_entry() {
   fi
 }
 
-install_skill_store() {
-  local skill_name="$1"
-  local source_dir="$ROOT_DIR/skills/$skill_name"
-  local target_dir="$HJKIT_STORE_DIR/$skill_name"
-
-  confirm_overwrite "$target_dir"
-  backup_if_exists "$target_dir"
-  rm -rf "$target_dir"
-  mkdir -p "$target_dir"
-  cp -R "$source_dir/." "$target_dir/"
-}
-
 link_skill_discovery() {
-  local target_dir="$1"
+  local source_dir="$1"
   local link_path="$2"
 
   confirm_overwrite "$link_path"
   backup_if_exists "$link_path"
   rm -rf "$link_path"
-  ln -s "$target_dir" "$link_path"
+  ln -s "$source_dir" "$link_path"
 }
 
 for skill_name in "${SKILL_NAMES[@]}"; do
-  install_skill_store "$skill_name"
-  link_skill_discovery "$HJKIT_STORE_DIR/$skill_name" "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
+  link_skill_discovery "$ROOT_DIR/skills/$skill_name" "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
 done
 
 if [ -n "$PROJECT_PATH" ]; then
@@ -124,7 +109,7 @@ if [ -n "$PROJECT_PATH" ]; then
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   mkdir -p "$PROJECT_SKILLS_DIR"
   for skill_name in "${SKILL_NAMES[@]}"; do
-    link_skill_discovery "$HJKIT_STORE_DIR/$skill_name" "$PROJECT_SKILLS_DIR/hjkit-$skill_name"
+    link_skill_discovery "$ROOT_DIR/skills/$skill_name" "$PROJECT_SKILLS_DIR/hjkit-$skill_name"
   done
   echo "Repo-local skill links created in: $PROJECT_SKILLS_DIR"
 
@@ -132,8 +117,8 @@ if [ -n "$PROJECT_PATH" ]; then
 fi
 
 echo "✅ Installed:"
-echo "  - $HJKIT_STORE_DIR/ui-builder"
-echo "  - $HJKIT_STORE_DIR/ui-review"
+echo "  - $ROOT_DIR/skills/ui-builder"
+echo "  - $ROOT_DIR/skills/ui-review"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 echo
