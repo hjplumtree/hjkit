@@ -12,7 +12,7 @@ A compact Codex workflow for generating and improving product UI.
 ## Quick Start
 
 ```text
-Use the hjkit-ui-builder skill.
+Install hjkit, then use the hjkit-ui-builder skill.
 ```
 
 ## Install
