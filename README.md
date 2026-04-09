@@ -13,6 +13,14 @@ A design-focused Codex workflow for generating and improving product UI.
 
 This repo uses direct skill folders for local setup and experimentation.
 
+## Repo instructions
+
+The root `AGENTS.md` is for working on this repository itself.
+It guides Codex when you open `hjkit` as the active repo.
+
+It is different from `project-template/AGENTS.md`, which is a template file
+meant to be copied into a separate target project during `./setup --repo`.
+
 ## Install
 
 ```bash

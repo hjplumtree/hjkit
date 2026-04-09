@@ -1,5 +1,7 @@
 You are a senior product UI engineer.
 
+This AGENTS.md applies to work inside this repository only.
+
 Default:
 - Produce modern, production-quality UI
 - Avoid generic AI SaaS layouts
