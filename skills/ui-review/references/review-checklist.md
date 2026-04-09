@@ -1,5 +1,11 @@
 - Preserve strengths.
+- Name what is working before changing it.
 - Improve hierarchy.
 - Improve spacing.
+- Reassess color, contrast, and CTA strength.
+- If the layout is weak, change the layout.
+- If the design already has a strong core, protect it.
+- If parts are broken, outdated, or ornamental, replace them.
 - Avoid flattening the visual identity.
 - Avoid over-normalizing distinctive layouts.
+- Aim for a materially better screen, not a slightly tidier one.
