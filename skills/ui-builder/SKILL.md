@@ -47,6 +47,13 @@ Workflow:
 - Make the primary action unmistakable.
 - Make the screen feel specific to the product, not like a template.
 
+5. Critique
+- Before outputting, check whether the screen still feels generic.
+- Before outputting, check whether the CTA is strong enough.
+- Before outputting, check whether the hierarchy is obvious.
+- Before outputting, check whether the composition feels like a real product.
+- Revise anything that still feels weak.
+
 Rules:
 - Avoid default Tailwind look.
 - Avoid empty or flat UI.
