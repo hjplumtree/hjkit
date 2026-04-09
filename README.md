@@ -95,6 +95,8 @@ Run this once per project:
 ```
 
 This copies project template files and links skills for repo-local discovery.
+It also adds `.agents/` to the target project's `.gitignore` so the local
+discovery links stay out of version control.
 
 If you want to do it manually, copy:
 

@@ -66,6 +66,23 @@ install_project_file() {
   echo "Installed project file: $target_file"
 }
 
+ensure_project_gitignore_entry() {
+  local gitignore_file="$1"
+  local entry="$2"
+
+  mkdir -p "$(dirname "$gitignore_file")"
+  if [ ! -e "$gitignore_file" ]; then
+    printf "%s\n" "$entry" > "$gitignore_file"
+    echo "Created .gitignore with entry: $entry"
+    return
+  fi
+
+  if ! grep -Fxq "$entry" "$gitignore_file"; then
+    printf "\n# hjkit local discovery\n%s\n" "$entry" >> "$gitignore_file"
+    echo "Updated .gitignore with entry: $entry"
+  fi
+}
+
 confirm_overwrite "$HJKIT_STORE_DIR/ui-builder"
 confirm_overwrite "$HJKIT_STORE_DIR/ui-review"
 confirm_overwrite "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
@@ -106,6 +123,8 @@ if [ -n "$PROJECT_PATH" ]; then
   ln -s "$HJKIT_STORE_DIR/ui-builder" "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
   ln -s "$HJKIT_STORE_DIR/ui-review" "$PROJECT_SKILLS_DIR/hjkit-ui-review"
   echo "Repo-local skill links created in: $PROJECT_SKILLS_DIR"
+
+  ensure_project_gitignore_entry "$PROJECT_PATH/.gitignore" ".agents/"
 fi
 
 echo "✅ Installed:"
