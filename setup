@@ -11,7 +11,8 @@ PROJECT_SKILLS_DIR=""
 # - source root: canonical skill source inside this repo
 # - user discovery root: where Codex finds skills after local install
 # - project discovery root: created only when --repo is used
-OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
+OFFICIAL_SKILLS_DIR="$HOME/.codex/skills"
+LEGACY_USER_SKILLS_DIR="$HOME/.agents/skills"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -97,9 +98,19 @@ link_skill_discovery() {
   ln -s "$source_dir" "$link_path"
 }
 
+cleanup_legacy_user_links() {
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    rm -rf "$LEGACY_USER_SKILLS_DIR/hjkit-$skill_name"
+  done
+  rmdir "$LEGACY_USER_SKILLS_DIR" 2>/dev/null || true
+  rmdir "$(dirname "$LEGACY_USER_SKILLS_DIR")" 2>/dev/null || true
+}
+
 for skill_name in "${SKILL_NAMES[@]}"; do
   link_skill_discovery "$ROOT_DIR/skills/$skill_name" "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
 done
+
+cleanup_legacy_user_links
 
 if [ -n "$PROJECT_PATH" ]; then
   mkdir -p "$PROJECT_PATH"

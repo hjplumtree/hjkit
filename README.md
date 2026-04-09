@@ -18,7 +18,7 @@ chmod +x setup
 ./setup
 ```
 
-This keeps the skill source in `skills/`, links it into `~/.agents/skills`,
+This keeps the skill source in `skills/`, links it into `~/.codex/skills`,
 and leaves `~/.codex/AGENTS.md` untouched.
 
 ## Add to a project
@@ -30,6 +30,9 @@ and leaves `~/.codex/AGENTS.md` untouched.
 This copies the project templates, links skills into
 `your-project/.agents/skills`, and adds `.agents/` to the target project's
 `.gitignore`.
+
+The project-local `.agents/skills` links are for that repo only. The shared
+user-level install lives in `~/.codex/skills`.
 
 ## Use it
 

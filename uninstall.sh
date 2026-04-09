@@ -2,7 +2,8 @@
 set -euo pipefail
 
 SKILL_NAMES=("ui-builder" "ui-review")
-OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
+OFFICIAL_SKILLS_DIR="$HOME/.codex/skills"
+LEGACY_USER_SKILLS_DIR="$HOME/.agents/skills"
 PROJECT_PATH=""
 
 while [[ $# -gt 0 ]]; do
@@ -33,6 +34,12 @@ remove_current_install() {
   done
 }
 
+remove_legacy_user_install() {
+  for skill_name in "${SKILL_NAMES[@]}"; do
+    remove_path "$LEGACY_USER_SKILLS_DIR/hjkit-$skill_name"
+  done
+}
+
 remove_project_links() {
   local project_skills_dir="$1"
   for skill_name in "${SKILL_NAMES[@]}"; do
@@ -42,10 +49,16 @@ remove_project_links() {
 }
 
 remove_current_install
+remove_legacy_user_install
 
 if [ -d "$OFFICIAL_SKILLS_DIR" ]; then
   rmdir "$OFFICIAL_SKILLS_DIR" 2>/dev/null || true
   rmdir "$(dirname "$OFFICIAL_SKILLS_DIR")" 2>/dev/null || true
+fi
+
+if [ -d "$LEGACY_USER_SKILLS_DIR" ]; then
+  rmdir "$LEGACY_USER_SKILLS_DIR" 2>/dev/null || true
+  rmdir "$(dirname "$LEGACY_USER_SKILLS_DIR")" 2>/dev/null || true
 fi
 
 if [ -n "$PROJECT_PATH" ]; then
@@ -61,6 +74,9 @@ remove_path "$HOME/.codex/.agent/skills/hjkit"
 echo "✅ Removed:"
 for skill_name in "${SKILL_NAMES[@]}"; do
   echo "  - $OFFICIAL_SKILLS_DIR/hjkit-$skill_name"
+done
+for skill_name in "${SKILL_NAMES[@]}"; do
+  echo "  - $LEGACY_USER_SKILLS_DIR/hjkit-$skill_name (legacy)"
 done
 if [ -n "$PROJECT_PATH" ]; then
   echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-builder"
