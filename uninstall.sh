@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -24,17 +23,22 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
-rm -rf "$HJKIT_STORE_DIR/ui-builder"
-rm -rf "$HJKIT_STORE_DIR/ui-review"
-rm -rf "$LEGACY_HJKIT_STORE_DIR/ui-builder"
-rm -rf "$LEGACY_HJKIT_STORE_DIR/ui-review"
+remove_path() {
+  local path="$1"
+  rm -rf "$path"
+}
+
+remove_path "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
+remove_path "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
+remove_path "$HJKIT_STORE_DIR/ui-builder"
+remove_path "$HJKIT_STORE_DIR/ui-review"
+remove_path "$LEGACY_HJKIT_STORE_DIR/ui-builder"
+remove_path "$LEGACY_HJKIT_STORE_DIR/ui-review"
 
 if [ -n "$PROJECT_PATH" ]; then
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
-  rm -rf "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  rm -rf "$PROJECT_SKILLS_DIR/hjkit-ui-review"
+  remove_path "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
+  remove_path "$PROJECT_SKILLS_DIR/hjkit-ui-review"
   rmdir "$PROJECT_SKILLS_DIR" 2>/dev/null || true
   rmdir "$PROJECT_PATH/.agents" 2>/dev/null || true
 fi

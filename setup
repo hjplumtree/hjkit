@@ -56,14 +56,14 @@ confirm_overwrite() {
   fi
 }
 
-install_project_file() {
+install_file_with_backup() {
   local source_file="$1"
   local target_file="$2"
 
   confirm_overwrite "$target_file"
   backup_if_exists "$target_file"
   cp "$source_file" "$target_file"
-  echo "Installed project file: $target_file"
+  echo "Installed file: $target_file"
 }
 
 ensure_project_gitignore_entry() {
@@ -83,45 +83,42 @@ ensure_project_gitignore_entry() {
   fi
 }
 
-confirm_overwrite "$HJKIT_STORE_DIR/ui-builder"
-confirm_overwrite "$HJKIT_STORE_DIR/ui-review"
-confirm_overwrite "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-confirm_overwrite "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
+install_skill_store() {
+  local skill_name="$1"
+  local source_dir="$ROOT_DIR/skills/$skill_name"
+  local target_dir="$HJKIT_STORE_DIR/$skill_name"
 
-backup_if_exists "$HJKIT_STORE_DIR/ui-builder"
-backup_if_exists "$HJKIT_STORE_DIR/ui-review"
-backup_if_exists "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-backup_if_exists "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
+  confirm_overwrite "$target_dir"
+  backup_if_exists "$target_dir"
+  rm -rf "$target_dir"
+  mkdir -p "$target_dir"
+  cp -R "$source_dir/." "$target_dir/"
+}
 
-rm -rf "$HJKIT_STORE_DIR/ui-builder"
-rm -rf "$HJKIT_STORE_DIR/ui-review"
-mkdir -p "$HJKIT_STORE_DIR/ui-builder"
-mkdir -p "$HJKIT_STORE_DIR/ui-review"
+link_skill_discovery() {
+  local target_dir="$1"
+  local link_path="$2"
 
-cp -R "$ROOT_DIR/skills/ui-builder/." "$HJKIT_STORE_DIR/ui-builder/"
-cp -R "$ROOT_DIR/skills/ui-review/." "$HJKIT_STORE_DIR/ui-review/"
+  confirm_overwrite "$link_path"
+  backup_if_exists "$link_path"
+  rm -rf "$link_path"
+  ln -s "$target_dir" "$link_path"
+}
 
-rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
-
-ln -s "$HJKIT_STORE_DIR/ui-builder" "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
-ln -s "$HJKIT_STORE_DIR/ui-review" "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
+install_skill_store "ui-builder"
+install_skill_store "ui-review"
+link_skill_discovery "$HJKIT_STORE_DIR/ui-builder" "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
+link_skill_discovery "$HJKIT_STORE_DIR/ui-review" "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 
 if [ -n "$PROJECT_PATH" ]; then
   mkdir -p "$PROJECT_PATH"
-  install_project_file "$ROOT_DIR/project-template/AGENTS.md" "$PROJECT_PATH/AGENTS.md"
-  install_project_file "$ROOT_DIR/project-template/DESIGN_SYSTEM.md" "$PROJECT_PATH/DESIGN_SYSTEM.md"
+  install_file_with_backup "$ROOT_DIR/project-template/AGENTS.md" "$PROJECT_PATH/AGENTS.md"
+  install_file_with_backup "$ROOT_DIR/project-template/DESIGN_SYSTEM.md" "$PROJECT_PATH/DESIGN_SYSTEM.md"
 
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   mkdir -p "$PROJECT_SKILLS_DIR"
-  confirm_overwrite "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  confirm_overwrite "$PROJECT_SKILLS_DIR/hjkit-ui-review"
-  backup_if_exists "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  backup_if_exists "$PROJECT_SKILLS_DIR/hjkit-ui-review"
-  rm -rf "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  rm -rf "$PROJECT_SKILLS_DIR/hjkit-ui-review"
-  ln -s "$HJKIT_STORE_DIR/ui-builder" "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
-  ln -s "$HJKIT_STORE_DIR/ui-review" "$PROJECT_SKILLS_DIR/hjkit-ui-review"
+  link_skill_discovery "$HJKIT_STORE_DIR/ui-builder" "$PROJECT_SKILLS_DIR/hjkit-ui-builder"
+  link_skill_discovery "$HJKIT_STORE_DIR/ui-review" "$PROJECT_SKILLS_DIR/hjkit-ui-review"
   echo "Repo-local skill links created in: $PROJECT_SKILLS_DIR"
 
   ensure_project_gitignore_entry "$PROJECT_PATH/.gitignore" ".agents/"
@@ -134,6 +131,4 @@ echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 echo
 echo "Next:"
-echo "1. If needed, copy project-template files into your project"
-echo "2. In Codex, start with:"
-echo "   Use the hjkit-ui-builder skill."
+echo "1. In Codex, use hjkit-ui-builder or hjkit-ui-review."
