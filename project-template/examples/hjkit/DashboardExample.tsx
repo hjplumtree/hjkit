@@ -10,7 +10,7 @@ import {
   Section,
   Stack,
   Toolbar,
-} from "../components";
+} from "../../components";
 
 export function DashboardExample() {
   return (
@@ -50,10 +50,7 @@ export function DashboardExample() {
                 title="Needs a decision"
                 description="Use this area for situations that would otherwise get buried in a flat dashboard."
               >
-                <Callout
-                  tone="warning"
-                  title="Release note draft is missing a fallback"
-                >
+                <Callout tone="warning" title="Release note draft is missing a fallback">
                   Add the customer-safe fallback before publishing today's update.
                 </Callout>
               </Section>

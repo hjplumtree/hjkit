@@ -11,7 +11,7 @@ import {
   Section,
   Stack,
   Toolbar,
-} from "../components";
+} from "../../components";
 
 export function ToolExample() {
   return (

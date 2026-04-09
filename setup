@@ -129,7 +129,7 @@ if [ -n "$PROJECT_PATH" ]; then
   install_file_with_backup "$ROOT_DIR/project-template/AGENTS.md" "$PROJECT_PATH/AGENTS.md"
   install_file_with_backup "$ROOT_DIR/project-template/DESIGN_SYSTEM.md" "$PROJECT_PATH/DESIGN_SYSTEM.md"
   install_dir_with_backup "$ROOT_DIR/project-template/components" "$PROJECT_PATH/components"
-  install_dir_with_backup "$ROOT_DIR/project-template/examples" "$PROJECT_PATH/examples/hjkit"
+  install_dir_with_backup "$ROOT_DIR/project-template/examples/hjkit" "$PROJECT_PATH/examples/hjkit"
 
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   mkdir -p "$PROJECT_SKILLS_DIR"

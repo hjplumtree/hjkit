@@ -4,7 +4,13 @@ These are reference compositions for the installed `components/` set.
 
 Use them as:
 - structural baselines for new screens
-- density references for dashboard, tool, and settings layouts
+- density references for dashboard, landing, tool, and settings layouts
 - a quick check that the primitives actually compose into shipped-looking UI
+
+Included examples:
+- `hjkit/DashboardExample.tsx`
+- `hjkit/LandingExample.tsx`
+- `hjkit/ToolExample.tsx`
+- `hjkit/SettingsExample.tsx`
 
 They are intentionally small and framework-agnostic enough to adapt into a real app.
