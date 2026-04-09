@@ -1,0 +1,6 @@
+- Is the target user obvious?
+- Is the core action obvious?
+- Is there one primary action?
+- Is the hierarchy clear?
+- Is the spacing balanced?
+- Does it look product-specific rather than template-like?

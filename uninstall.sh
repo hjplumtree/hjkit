@@ -1,19 +1,16 @@
 
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-GLOBAL_AGENTS_DIR="$HOME/.codex"
 HJKIT_STORE_DIR="$HOME/.codex/.agent/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
-rm -f "$GLOBAL_AGENTS_DIR/AGENTS.md"
 rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 rm -rf "$HJKIT_STORE_DIR/ui-builder"
 rm -rf "$HJKIT_STORE_DIR/ui-review"
 
 echo "✅ Removed:"
-echo "  - $GLOBAL_AGENTS_DIR/AGENTS.md"
 echo "  - $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 echo "  - $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 echo "  - $HJKIT_STORE_DIR/ui-builder"

@@ -1,0 +1,5 @@
+- Avoid centered-everything landing layouts.
+- Avoid generic 3-card SaaS feature sections unless clearly justified.
+- Avoid excessive badges and gradients.
+- Avoid empty chart placeholders.
+- Avoid weak primary actions.

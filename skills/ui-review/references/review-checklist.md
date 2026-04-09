@@ -1,0 +1,5 @@
+- Preserve strengths.
+- Improve hierarchy.
+- Improve spacing.
+- Avoid flattening the visual identity.
+- Avoid over-normalizing distinctive layouts.

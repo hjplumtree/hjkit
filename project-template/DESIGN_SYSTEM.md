@@ -1,4 +1,3 @@
-
 # Design System
 
 ## Colors
@@ -19,6 +18,7 @@ Inputs → minimal, readable
 
 ## Style
 Modern, structured, calm
+Left-aligned by default unless centered layout is clearly justified
 
 ## Avoid
 Flat UI, generic SaaS, too many cards
