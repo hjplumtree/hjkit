@@ -28,6 +28,9 @@ Workflow:
 - Determine the screen type: dashboard, landing, tool, settings, or other.
 - Decompose the problem in this order: structure, hierarchy, density, spacing, CTA, type system, state coverage, generic feel.
 - Name the purpose, first impression, main focus, and biggest distraction.
+- Identify the focal point and the reading path.
+- Note any orphaned labels, buttons, or cards.
+- Note whether the screen uses one spacing rhythm or multiple competing rhythms.
 - If given a URL, use the browser view as the source of truth.
 - When given a URL, verify desktop, tablet, and mobile behavior when possible.
 - When given a URL, check the first viewport CTA and obvious empty/loading/error states when they exist.
@@ -42,6 +45,10 @@ Workflow:
 - Preserve strong parts of the current design.
 - Use this reference priority: project local `components/` → project local `examples/` → shadcn/ui → `DESIGN_SYSTEM.md`.
 - Prefer the project's existing shadcn/ui components over raw elements when an installed primitive exists.
+- Treat wrapper containment as a hard constraint: content touching a wrapper edge is a layout failure unless full-bleed is clearly intentional.
+- If the outer shell is weak, repair the shell before polishing internal blocks.
+- If a section does not earn its space, remove or merge it.
+- If the focal point is unclear, elevate one instead of adding more visual weight.
 - If the screen is structurally weak, change layout and grouping first.
 - If the user did not explain the problem clearly, identify the problem anyway.
 - If attention is scattered, adjust hierarchy, color, and CTA.
@@ -75,8 +82,14 @@ Workflow:
 - Is the purpose obvious within the first read?
 - Does the hierarchy match the screen type?
 - Is the primary action singular and obvious?
+- Is there one clear focal point and one obvious reading path?
 - Did we preserve what already worked?
 - Did we avoid over-normalizing a distinctive layout?
+- Does any content block touch or nearly touch a wrapper edge?
+- Is the outer shell containing the screen cleanly?
+- Are there any orphaned labels, buttons, or cards?
+- Does the screen use one spacing rhythm and one radius language consistently?
+- Do all major sections earn their space?
 - Are the required screen-type states present?
   - Dashboard: empty, loading, error, and scanable default state.
   - Landing: CTA above the fold and clear fallback state if content is sparse.

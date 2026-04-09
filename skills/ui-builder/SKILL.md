@@ -22,10 +22,14 @@ Workflow:
 - Name the product context.
 - Name the screen type: dashboard, landing, tool, settings, or other.
 - Name the success condition: what does "feels shipped" mean for this specific product?
+- Name the focal point and the expected reading path.
+- Note any trust signals, proof points, or confirmation cues the screen needs.
 - If information is missing, infer conservatively and state assumptions briefly.
 - Check the project's existing shadcn/ui components and Tailwind setup first.
 - If the project has `components/` or `examples/` directories, use the closest matching local composition as the structural baseline.
 - Wrap the screen in the outermost layout shell the project provides, such as `PageShell`, `layout.tsx`, or an equivalent wrapper.
+- Treat wrapper containment as a hard constraint: no content block should touch a wrapper edge unless full-bleed is intentional.
+- If the shell is weak, fix the shell before designing internal sections.
 - Use the closest existing project components before introducing new abstractions.
 - Use `PrimaryButton` only once per screen.
 - Prefer established UI primitives over raw elements.
@@ -56,6 +60,8 @@ Screen expectations:
 - Describe the final composition in plain language.
 - Avoid technical review phrases like "improved density balance" or "strong hierarchy".
 - Prefer product language such as "the main action sits at the top and nothing else competes with it."
+- Do not leave orphaned labels, buttons, or cards without a clear structural partner.
+- Keep spacing rhythm and radius language consistent within the screen.
 - Use strong hierarchy.
 - Use clean spacing.
 - Use reusable components.
@@ -76,6 +82,9 @@ Screen expectations:
 - Before outputting, check whether the hierarchy is obvious.
 - Before outputting, check whether the composition feels like a real product.
 - Before outputting, check whether all required states for this screen type are present.
+- Before outputting, check whether the focal point is unmistakable and the reading path is obvious.
+- Before outputting, check whether there are any orphaned labels, buttons, or cards.
+- Before outputting, check whether one spacing rhythm and one radius language are used consistently.
 - Revise anything that still feels weak.
 
 Reference priority:
@@ -93,6 +102,7 @@ Rules:
 - Prefer clarity over decoration.
 - If the problem needs it, change the layout rather than polishing the current one.
 - If the screen feels generic, the structure is wrong.
+- If content feels pressed against the wrapper edge, rework the shell and spacing before anything else.
 - Build with reusable components first, raw elements last.
 - If an example composition exists for the screen type, use it as the structural baseline.
 - If a shadcn/ui component already covers the need, prefer it over a custom primitive.

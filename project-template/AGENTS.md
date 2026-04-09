@@ -29,10 +29,14 @@ overriding the project's own product logic.
 - Prefer reusable components.
 - Keep hierarchy obvious.
 - Use one primary action per screen.
+- Keep one clear focal point and one obvious reading path per screen.
+- Remove sections that do not earn their space.
+- Do not let decorative elements compete with the primary action.
 - Default to left-aligned content unless centered layout is clearly justified.
 - Prefer asymmetry or modular grouping over evenly repeated cards.
 - Reduce decorative elements before reducing clarity.
 - Treat wrapper spacing and panel padding as required, not optional.
+- Keep spacing rhythm and radius language consistent within a screen.
 - If the screen feels generic, the structure is wrong.
 - If the project already has `components/` or `examples/`, use the closest matching local composition as a baseline.
 

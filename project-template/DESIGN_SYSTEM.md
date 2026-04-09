@@ -77,10 +77,28 @@ consistent, structured, and shipped-looking.
 - A generic 3-card grid without structural justification is a failure.
 - Cramped content with correct alignment is a spacing failure.
 - A generic feel on a product-specific screen is a structural failure.
+- Competing focal points are a composition failure.
+- Orphaned labels, buttons, or cards are a layout failure.
+- Mixed spacing or radius systems in one screen are a consistency failure.
+- Sections that do not earn their space are a structure failure.
+- A hidden primary action is a hierarchy failure.
 
 ## Non-Negotiables
 - No content block may touch a wrapper edge unless full-bleed is intentional.
 - No panel may be missing internal padding.
 - No screen may have more than one primary action.
+- No screen may have more than one focal point.
+- No screen may lack one obvious reading path.
+  - The eye should move top-to-bottom or in a clear Z-pattern without confusion.
+  - No two elements should compete for equal attention at the same level.
+  - Section transitions should feel intentional, not accidental.
+- No screen may contain orphaned labels, buttons, or cards.
+- No screen may mix spacing rhythms or radius languages without intent.
+- No section may exist without a clear reason.
+- Every section must earn its space.
+  - It introduces new information not present elsewhere.
+  - It contains the primary or secondary action.
+  - Removing it would make the screen harder to understand.
+- Primary action must be visible in the first read.
 - If the screen feels generic, fix the structure first.
 - Every interactive component must handle required states.
