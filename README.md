@@ -34,12 +34,6 @@ This copies the project templates, links skills into
 
 ## Use it
 
-This project uses explicit-first invocation by default.
-
-Skills may also be selected implicitly where supported, but trigger reliability depends on the skill description and Codex surface.
-
-For the most reliable experience, use:
-
 ```text
 Use the hjkit-ui-builder skill.
 Use the hjkit-ui-review skill.

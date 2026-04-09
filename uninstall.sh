@@ -28,7 +28,8 @@ remove_path() {
   rm -rf "$path"
 }
 
-# Legacy path from older installs: ~/.codex/.agent/skills/hjkit
+# Legacy path from older installs was ~/.codex/.agent/skills/hjkit; this
+# script only removes the paths created by the current setup flow.
 
 for skill_name in "${SKILL_NAMES[@]}"; do
   remove_path "$OFFICIAL_SKILLS_DIR/hjkit-$skill_name"

@@ -7,7 +7,10 @@ FORCE=0
 PROJECT_PATH=""
 PROJECT_SKILLS_DIR=""
 
-# Paths
+# Paths:
+# - source install root: where hjkit stores its canonical skill copies
+# - user discovery root: where Codex finds skills after local install
+# - project discovery root: created only when --repo is used
 HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
