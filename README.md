@@ -12,8 +12,10 @@ A compact Codex workflow for generating and improving product UI.
 ## Discovery layout
 
 Codex reads skills from discovery paths, not from the source folder alone.
-The canonical source lives in `skills/`, and this repo also exposes
-repo-local discovery through `.agents/skills/`.
+The canonical source lives in `skills/`.
+Running `./setup` creates user-level discovery links in `~/.agents/skills`.
+Running `./setup --repo /path/to/your-project` also creates project-local
+discovery links in `your-project/.agents/skills`.
 
 ## Repo instructions
 
