@@ -15,27 +15,31 @@ Workflow:
 - Name the target user.
 - Name the core action.
 - Name the product context and the success condition.
+- Name what would make this feel like a shipped product rather than a prototype.
 - If information is missing, infer conservatively and state assumptions briefly.
 
 2. Explore
-- Propose 2–3 genuinely different layout directions in plain language.
-- Make the directions differ in structure, density, hierarchy, and tone.
+- Propose exactly 2 directions by default.
+- Use 3 only when the problem truly needs a third option.
+- Make each direction differ in structure, density, hierarchy, and tone.
+- Direction A should be the strongest expected fit.
+- Direction B should be the more surprising but still plausible fit.
 - Avoid cosmetic variants of the same layout.
 
 3. Select
 - Choose one direction.
 - Briefly justify it based on clarity, usability, product fit, and why it best serves the core action.
+- Say why the rejected direction loses.
 
 4. Build
 - Output sections in order:
-  1. assumptions
-  2. options
-  3. chosen direction
-  4. final UI
-  5. What was revised
+  1. Design direction chosen + why
+  2. What was rejected + why
+  3. Final UI
+  4. What was revised
 - List only what changed after self-critique.
 - Skip this section if nothing needed revision.
-- If the user asks for code, produce the implementation directly after the chosen direction.
+- If the user asks for code, include the implementation in Final UI.
 - Build the strongest direction, not a compromise between options.
 - Use strong hierarchy.
 - Use clean spacing.

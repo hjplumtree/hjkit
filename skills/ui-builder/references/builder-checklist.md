@@ -1,6 +1,7 @@
 - Is the target user obvious?
 - Is the core action obvious?
 - Is the product context clear?
+- Is the shipped-product expectation clear?
 - Is there one strong primary action?
 - Do the options differ in structure, not just decoration?
 - Does the chosen direction fit the problem?
