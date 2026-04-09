@@ -20,7 +20,7 @@ Workflow:
 
 Before Building:
 - Check the project's existing shadcn/ui components and Tailwind setup first.
-- Check the hjkit reference examples in `project-template/examples/` for the closest matching composition when available.
+- If the project has `components/` or `examples/` directories, use the closest matching local composition as the structural baseline.
 - Use `PageShell` as the outermost wrapper when available.
 - Use the closest existing project components before introducing new abstractions.
 - Use `PrimaryButton` only once per screen.

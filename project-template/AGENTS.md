@@ -36,7 +36,7 @@ UI must match the product's intent, density, and workflow.
 
 ## Read first
 - `DESIGN_SYSTEM.md`
-- `project-template/examples/`
+- If the project already has `components/` or `examples/`, use the closest matching local composition as a baseline.
 
 ## Avoid
 - Too many cards.
