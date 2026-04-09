@@ -40,15 +40,15 @@ meant to be copied into a separate target project during `./setup --repo`.
 ## Install
 
 ```bash
-git clone --single-branch --depth 1 https://github.com/hjplumtree/hjkit.git ~/.codex/.agent/skills/hjkit
-cd ~/.codex/.agent/skills/hjkit
+git clone --single-branch --depth 1 https://github.com/hjplumtree/hjkit.git ~/.codex/.agents/skills/hjkit
+cd ~/.codex/.agents/skills/hjkit
 chmod +x setup
 ./setup
 ```
 
 This installer:
 
-* stores source files under `~/.codex/.agent/skills/hjkit`
+* stores source files under `~/.codex/.agents/skills/hjkit`
 * creates discovery symlinks in `~/.agents/skills`
 * does **not** modify your global `~/.codex/AGENTS.md`
 
@@ -57,14 +57,14 @@ This installer:
 Force install:
 
 ```bash
-cd ~/.codex/.agent/skills/hjkit
+cd ~/.codex/.agents/skills/hjkit
 ./setup --force
 ```
 
 Install and also copy project template files:
 
 ```bash
-cd ~/.codex/.agent/skills/hjkit
+cd ~/.codex/.agents/skills/hjkit
 ./setup --repo /path/to/your-project
 ```
 
@@ -74,7 +74,7 @@ If project files already exist, they are backed up before overwrite unless you c
 
 `hjkit` stores source files under:
 
-* `~/.codex/.agent/skills/hjkit`
+* `~/.codex/.agents/skills/hjkit`
 
 For Codex discovery, it creates symlinks in:
 
@@ -96,8 +96,8 @@ For each project, copy:
 Example:
 
 ```bash
-cp ~/.codex/.agent/skills/hjkit/project-template/AGENTS.md /path/to/your-project/AGENTS.md
-cp ~/.codex/.agent/skills/hjkit/project-template/DESIGN_SYSTEM.md /path/to/your-project/DESIGN_SYSTEM.md
+cp ~/.codex/.agents/skills/hjkit/project-template/AGENTS.md /path/to/your-project/AGENTS.md
+cp ~/.codex/.agents/skills/hjkit/project-template/DESIGN_SYSTEM.md /path/to/your-project/DESIGN_SYSTEM.md
 ```
 
 ## Use it

@@ -2,19 +2,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HJKIT_STORE_DIR="$HOME/.codex/.agent/skills/hjkit"
+HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
+LEGACY_HJKIT_STORE_DIR="$HOME/.codex/.agent/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
 rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 rm -rf "$OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 rm -rf "$HJKIT_STORE_DIR/ui-builder"
 rm -rf "$HJKIT_STORE_DIR/ui-review"
+rm -rf "$LEGACY_HJKIT_STORE_DIR/ui-builder"
+rm -rf "$LEGACY_HJKIT_STORE_DIR/ui-review"
 
 echo "✅ Removed:"
 echo "  - $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 echo "  - $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 echo "  - $HJKIT_STORE_DIR/ui-builder"
 echo "  - $HJKIT_STORE_DIR/ui-review"
+echo "  - $LEGACY_HJKIT_STORE_DIR/ui-builder"
+echo "  - $LEGACY_HJKIT_STORE_DIR/ui-review"
 echo
 echo "Note: uninstall does not automatically restore backups."
 echo "It does not preserve manual edits made after installation."

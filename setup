@@ -26,7 +26,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-HJKIT_STORE_DIR="$HOME/.codex/.agent/skills/hjkit"
+HJKIT_STORE_DIR="$HOME/.codex/.agents/skills/hjkit"
 OFFICIAL_SKILLS_DIR="$HOME/.agents/skills"
 
 mkdir -p "$HJKIT_STORE_DIR"
