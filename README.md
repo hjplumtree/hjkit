@@ -13,6 +13,22 @@ A design-focused Codex workflow for generating and improving product UI.
 
 This repo uses direct skill folders for local setup and experimentation.
 
+## Discovery layout
+
+Codex reads skills from discovery paths, not from the source folder alone.
+
+This repo keeps the canonical skill source in:
+
+* `skills/`
+
+For repo-local discovery, it also exposes:
+
+* `.agents/skills/`
+
+If you run `./setup`, it additionally creates user-level discovery links in:
+
+* `~/.agents/skills`
+
 ## Repo instructions
 
 The root `AGENTS.md` is for working on this repository itself.
