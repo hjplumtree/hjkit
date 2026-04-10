@@ -31,6 +31,7 @@ Workflow:
 - Compare the plan against `project-template/examples/plan-schema.md` before judging it.
 - Compare the plan against the matching screen-specific example block in `project-template/examples/plan-schema.md`.
 - Decompose the problem in this order: structure, hierarchy, density, spacing, CTA, type system, state coverage, generic feel.
+- Also judge whether the shell amplitude is appropriate for the screen type and whether the contrast budget is strong enough for the primary action.
 - Name the purpose, first impression, main focus, and biggest distraction.
 - Identify the focal point and the reading path.
 - Identify the dominant surface and whether the supporting surfaces have a job.
@@ -60,6 +61,8 @@ Workflow:
 - If the user did not explain the problem clearly, identify the problem anyway.
 - If attention is scattered, adjust hierarchy, color, and CTA.
 - If density is wrong, adjust spacing and grouping.
+- If the screen feels too cramped for its type, adjust amplitude before doing micro-spacing fixes.
+- If the primary action blends into the shell, rebalance the contrast budget before adding more ornament.
 - If type is doing the wrong job, change the type system.
 - If the problem is local, use a local fix.
 - If the problem is sectional, rewrite the section.
@@ -90,6 +93,11 @@ Workflow:
 - Is the purpose obvious within the first read?
 - Does the hierarchy match the screen type?
 - Is the primary action singular and obvious?
+- Is the shell wide enough for the screen type?
+- Does the primary action visibly win against the surrounding surface?
+- Are secondary actions visually suppressed relative to the primary?
+- Is the card depth clearly different from the shell depth?
+- Is the density appropriate for the screen type?
 - Is there one clear focal point and one obvious reading path?
 - Did we preserve what already worked?
 - Did we avoid over-normalizing a distinctive layout?
@@ -98,6 +106,7 @@ Workflow:
 - Are there any orphaned labels, buttons, or cards?
 - Does the screen use one spacing rhythm and one radius language consistently?
 - Do all major sections earn their space?
+- Does the screen feel structurally correct but still cramped, and if so, does it fail?
 - Are the required screen-type states present?
   - Dashboard: empty, loading, error, and scanable default state.
   - Landing: CTA above the fold and clear fallback state if content is sparse.

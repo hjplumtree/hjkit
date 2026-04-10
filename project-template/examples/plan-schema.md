@@ -8,6 +8,9 @@ Plans should be short enough to scan, but complete enough to reject or approve w
 - Screen type
 - Family
 - Layout
+- Width
+- Density
+- Contrast Budget
 - Focal point
 - Primary action
 - Surface roles
@@ -27,6 +30,9 @@ Plans should be short enough to scan, but complete enough to reject or approve w
 ├─ Screen Type: Landing
 ├─ Family: editorial-hero
 ├─ Layout: PageShell > HeroShell (mode: asymmetric) > ProofRail
+├─ Width: wide
+├─ Density: spacious
+├─ Contrast Budget: high
 ├─ Focal Point: Headline
 ├─ Primary Action: Start with examples
 ├─ Surface Roles:
@@ -52,6 +58,9 @@ Plans should be short enough to scan, but complete enough to reject or approve w
 ├─ Screen Type: Dashboard
 ├─ Family: queue-led
 ├─ Layout: PageShell > Toolbar > QueueRail + ProofRail > Exception rail
+├─ Width: wide
+├─ Density: compact
+├─ Contrast Budget: medium-high
 ├─ Focal Point: Queue
 ├─ Primary Action: New report
 ├─ Surface Roles:
@@ -78,6 +87,9 @@ Plans should be short enough to scan, but complete enough to reject or approve w
 ├─ Screen Type: Tool
 ├─ Family: input-result
 ├─ Layout: PageShell > Toolbar > InputResultShell
+├─ Width: balanced
+├─ Density: balanced
+├─ Contrast Budget: high
 ├─ Focal Point: Input
 ├─ Primary Action: Generate summary
 ├─ Surface Roles:
@@ -104,6 +116,9 @@ Plans should be short enough to scan, but complete enough to reject or approve w
 ├─ Screen Type: Settings
 ├─ Family: task-form
 ├─ Layout: PageShell > TaskFormShell > grouped field sections
+├─ Width: narrow
+├─ Density: compact
+├─ Contrast Budget: low
 ├─ Focal Point: Save path
 ├─ Primary Action: Save changes
 ├─ Surface Roles:

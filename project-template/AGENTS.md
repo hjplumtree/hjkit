@@ -11,10 +11,11 @@ overriding the project's own product logic.
 3. Identify the screen type.
 4. Choose the strongest composition family for that screen type before touching components.
 5. Write a Pseudo-DOM plan before any code, matching `examples/plan-schema.md`.
-6. Define the focal point, primary action, dominant surface, and supporting surfaces in the plan.
-7. Use the project's existing shadcn/ui and Tailwind stack before writing raw elements.
-8. Rebuild structure before polishing if the screen feels weak.
-9. Refine spacing, hierarchy, and grouping.
+6. Define the width, density, contrast budget, focal point, primary action, dominant surface, and supporting surfaces in the plan.
+7. Stop here and apply the review filter before proceeding to build.
+8. Use the project's existing shadcn/ui and Tailwind stack before writing raw elements.
+9. Rebuild structure before polishing if the screen feels weak.
+10. Refine spacing, hierarchy, grouping, amplitude, and contrast.
 
 ## Project Profile Reading Rules
 - Treat backend as fixed for the project, not per screen.

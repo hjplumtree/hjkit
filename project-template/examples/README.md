@@ -11,7 +11,9 @@ Each example is a screen family, not a generic layout:
 
 Use them as:
 - structural baselines for new screens
+- layout amplitude references for how wide or contained each screen type should feel
 - density references for dashboard, landing, tool, and settings layouts
+- contrast references for how strongly the primary action should lead
 - family references for choosing the right composition before writing code
 - a quick check that the primitives actually compose into shipped-looking UI
 

@@ -24,6 +24,9 @@ Workflow:
 - Name the success condition: what does "feels shipped" mean for this specific product?
 - Name the focal point and the expected reading path.
 - Choose the most likely archetype before choosing visual details.
+- Name the layout amplitude: narrow, balanced, wide, or fluid.
+- Name the density profile: compact, balanced, or spacious.
+- Name the contrast budget: low, medium, or high.
 - Define the dominant surface and the supporting surfaces.
 - Note any trust signals, proof points, or confirmation cues the screen needs.
 - If information is missing, infer conservatively and state assumptions briefly.
@@ -63,7 +66,7 @@ Screen expectations:
 - Use a structured plan, not prose.
 - Match the canonical format in `project-template/examples/plan-schema.md`.
 - Match the screen-specific example block in `project-template/examples/plan-schema.md` for the chosen screen type.
-- The plan must name the family, layout, focal point, primary action, surface roles, states, and no-go notes.
+- The plan must name the family, layout, width, density, contrast budget, focal point, primary action, surface roles, states, and no-go notes.
 - Start with the shell, focal point, and surface roles before adding detail.
 - If the first draft feels weak during construction, change the structure before adding detail.
 - Use the chosen archetype as the composition recipe, not as decoration.
@@ -89,6 +92,8 @@ Screen expectations:
 
 5. Self-critique
 - Before outputting, check whether the screen still feels generic.
+- Before outputting, check whether the shell is wide enough for the screen type.
+- Before outputting, check whether the contrast budget lets the primary action visibly win.
 - Before outputting, check whether the CTA is strong enough.
 - Before outputting, check whether the hierarchy is obvious.
 - Before outputting, check whether the composition feels like a real product.

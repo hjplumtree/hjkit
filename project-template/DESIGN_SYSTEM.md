@@ -56,6 +56,19 @@ Every target project should establish a profile before screen work starts.
 - Tool: Section 18-20px, action-focused, medium density.
 - Settings: Section 16-18px, lowest cognitive load, form-grouped.
 
+## Layout Amplitude
+Layout amplitude defines how wide and open a screen should feel. It is distinct from density.
+- narrow: contained width, low visual tension, settings default.
+- balanced: default content width, most tool screens.
+- wide: expanded content width, clear breathing room, landing and dashboard default.
+- fluid: near full-bleed or full-bleed, reserved for hero-led or highly expressive blocks.
+- Landing screens should usually default to wide or fluid hero treatment.
+- Dashboard screens should usually default to a wide shell with rail structure.
+- Tool screens should usually default to balanced width with clear input/result separation.
+- Settings screens should usually default to narrow or balanced width.
+- If a landing screen feels cramped, check amplitude before adjusting spacing.
+- A wide shell with tight content spacing is a composition failure.
+
 ## Visual Presets
 Visual presets control the non-color tone of the system.
 - A preset should define a small but explicit token pack.
@@ -69,6 +82,20 @@ Visual presets control the non-color tone of the system.
 - Color roles stay semantic, but theme values are project-owned.
 - The consuming app must map these preset tokens into its own global theme layer, Tailwind extensions, or semantic CSS variables.
 - Hjkit ships the preset definitions, not the app-specific token wiring that consumes them.
+
+## Contrast Budget
+Contrast budget defines how much visual emphasis each role should receive on a screen.
+- High: the primary action must visibly win and the main surface must clearly lead.
+- Medium: the hierarchy should be clear without every block shouting.
+- Low: the layout should stay quiet and restrained, usually for settings or recovery states.
+- Primary action should always have the highest contrast on the screen.
+- Secondary actions should support, not compete with, the primary action.
+- Card depth should be visibly different from shell depth.
+- Proof surfaces should usually sit at lower contrast than the main read.
+- Tension surfaces may be stronger, but only when the screen needs blocker or risk visibility.
+- If a primary button blends into its surrounding surface, the contrast budget is too low.
+- If secondary actions match the primary action in visual weight, the contrast budget is too high or poorly assigned.
+- If every surface feels equally strong, the screen is over-budgeted.
 
 ## Composition Families
 Each screen type should choose from a small set of approved families.
@@ -111,7 +138,7 @@ These are the reusable structural recipes that can be promoted later if they rec
 Plans must be written as structured text, not prose.
 - Use a pseudo-DOM tree or nested outline.
 - Name the candidate and the family at the top.
-- Show layout, focal point, primary action, and surface roles explicitly.
+- Show layout, width, density, contrast budget, focal point, primary action, and surface roles explicitly.
 - Show supporting blocks and state coverage.
 - Include no-go notes when a candidate should be rejected.
 - Use `examples/plan-schema.md` as the canonical format reference.
@@ -124,6 +151,9 @@ Recommended plan shape:
 ```text
 [Candidate A: Family Name]
 ├─ Layout: ...
+├─ Width: narrow / balanced / wide / fluid
+├─ Density: compact / balanced / spacious
+├─ Contrast Budget: low / medium / high
 ├─ Surface: Primary / Secondary / Contrast / Tension
 ├─ Focal Point: ...
 ├─ Primary Action: ...
@@ -231,5 +261,10 @@ See [`examples/plan-schema.md`](./examples/plan-schema.md) for concrete examples
 - The first read should make the purpose obvious.
 - The eye should have one clear path.
 - The main action should be easy to find without searching.
+- The shell should feel wide enough for the screen type.
+- The primary action should visibly win against the surrounding surface.
+- Secondary actions should not compete with the primary action.
+- Card depth should be clearly different from shell depth.
+- Density should match the screen type instead of defaulting to a single rhythm.
 - The design should still feel specific if the copy is replaced with another product.
 - If the result looks tidy but generic, the structure needs another pass.
