@@ -67,6 +67,8 @@ Visual presets control the non-color tone of the system.
 - Accent density: how often emphasis may appear in one screen.
 - Motion feel: minimal, standard, or expressive motion.
 - Color roles stay semantic, but theme values are project-owned.
+- The consuming app must map these preset tokens into its own global theme layer, Tailwind extensions, or semantic CSS variables.
+- Hjkit ships the preset definitions, not the app-specific token wiring that consumes them.
 
 ## Composition Families
 Each screen type should choose from a small set of approved families.

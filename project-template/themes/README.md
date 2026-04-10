@@ -7,6 +7,9 @@ Use them as:
 - a source of non-color tokens such as radius, spacing density, type scale, and shadow depth
 - a way to keep the same structure while changing the product mood
 
+Connect them in the consuming app by importing one preset into the app's global theme layer, then mapping the `--hjkit-*` variables to the project's semantic tokens or Tailwind theme extensions.
+This repository ships the preset definitions, not the app-specific Tailwind configuration that consumes them.
+
 Rules:
 - Keep color values project-owned.
 - Treat these files as preset packs, not fixed brand themes.

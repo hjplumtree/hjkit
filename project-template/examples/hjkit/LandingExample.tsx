@@ -25,7 +25,7 @@ export function LandingExample() {
 
           <Cluster>
             <SecondaryButton>Read the rules</SecondaryButton>
-            <SecondaryButton>Start with examples</SecondaryButton>
+            <SecondaryButton>Browse examples</SecondaryButton>
           </Cluster>
         </Cluster>
 
