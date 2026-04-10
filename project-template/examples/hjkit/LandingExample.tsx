@@ -2,6 +2,9 @@ import {
   Badge,
   Callout,
   Cluster,
+  DataList,
+  HeroShell,
+  ProofRail,
   PageShell,
   Panel,
   PrimaryButton,
@@ -15,50 +18,81 @@ export function LandingExample() {
     <PageShell width="wide">
       <Stack gap="xl">
         <Cluster justify="between" align="center">
-          <Badge tone="primary">New</Badge>
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-text">hjkit</p>
+            <p className="text-sm text-text-muted">Design system for product teams</p>
+          </div>
+
           <Cluster>
-            <SecondaryButton>View demo</SecondaryButton>
-            <PrimaryButton>Start free trial</PrimaryButton>
+            <SecondaryButton>Read the rules</SecondaryButton>
+            <SecondaryButton>Start with examples</SecondaryButton>
           </Cluster>
         </Cluster>
 
-        <section className="grid gap-6 lg:grid-cols-[1.25fr_0.95fr]">
-          <Panel padding="lg">
-            <Stack gap="lg">
-              <Section
-                eyebrow="Workflow for teams"
-                title="Ship better screens without fighting your UI stack"
-                description="hjkit gives Codex a project-level design contract, reusable primitives, and review rules that keep output deliberate."
-              />
+        <HeroShell
+          eyebrow="For product builders"
+          title="Ship screens that feel specific, not templated"
+          description="hjkit gives Codex the structure, rules, and examples it needs to make better layout decisions before the visuals take over."
+          primaryAction={<PrimaryButton>Start with examples</PrimaryButton>}
+          secondaryAction={<SecondaryButton>Browse the system</SecondaryButton>}
+          badges={
+            <Cluster gap="sm">
+              <Badge tone="primary">One recipe per screen</Badge>
+              <Badge>Reuse the same primitives</Badge>
+              <Badge>Keep one focal point</Badge>
+            </Cluster>
+          }
+        />
 
-              <Cluster>
-                <PrimaryButton>Start free trial</PrimaryButton>
-                <SecondaryButton>See examples</SecondaryButton>
-              </Cluster>
-            </Stack>
+        <section className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
+          <ProofRail
+            eyebrow="What it changes"
+            title="The structure carries the design"
+            description="The screen should already feel like a real product before copy polish, iconography, or color accents do any work."
+          >
+            <DataList
+              items={[
+                {
+                  label: "Layout",
+                  value: "Asymmetric editorial read",
+                  meta: "Not centered-everything by default.",
+                },
+                {
+                  label: "CTA",
+                  value: "One dominant action",
+                  meta: "Visible in the first read.",
+                },
+                {
+                  label: "Surface",
+                  value: "One clear primary block",
+                  meta: "Support panels stay secondary.",
+                },
+              ]}
+            />
+          </ProofRail>
+
+          <Callout tone="primary" title="Why it stays flexible">
+            The rules are strict about hierarchy and structure, but loose enough to fit a dashboard,
+            a landing page, a tool, or a settings screen without forcing one visual style.
+          </Callout>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <Panel padding="lg" className="bg-surface-offset">
+            <Section
+              eyebrow="Do not"
+              title="Do not make every block look equal"
+              description="Repeated cards at the same weight are what make generated UI feel generic, even when the spacing is technically correct."
+            />
           </Panel>
 
-          <Stack gap="lg">
-            <Panel>
-              <Section
-                eyebrow="Why it works"
-                title="Constraints beat generic generation"
-                description="The layout should make the value obvious before the details, then keep the CTA visually dominant."
-              >
-                <Callout tone="primary" title="More than a prompt">
-                  The strongest output comes from components, policy, and feedback, not copy alone.
-                </Callout>
-              </Section>
-            </Panel>
-
-            <Panel>
-              <Section
-                eyebrow="Proof"
-                title="Installed into your repo"
-                description="Use the same design rules on new screens and legacy improvements."
-              />
-            </Panel>
-          </Stack>
+          <Panel padding="lg">
+            <Section
+              eyebrow="Do"
+              title="Let one surface lead"
+              description="Reserve contrast for the main read, the blocker, or the proof. Everything else should support that choice."
+            />
+          </Panel>
         </section>
       </Stack>
     </PageShell>

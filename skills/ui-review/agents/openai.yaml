@@ -1,7 +1,7 @@
 interface:
   display_name: "HJKit UI Review"
   short_description: "Diagnose and rebuild existing UI with judgment"
-  default_prompt: "Use $hjkit-ui-review to review this UI with judgment."
+  default_prompt: "Use $hjkit-ui-review to review this UI with judgment. Reject prose-only plans."
 
 policy:
   allow_implicit_invocation: false

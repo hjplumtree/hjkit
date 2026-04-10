@@ -5,3 +5,6 @@
 - Avoid empty chart placeholders.
 - Avoid weak or hesitant primary actions.
 - Avoid screens that could belong to any product.
+- Avoid prose-only plans when a structured plan is required.
+- Avoid building code before a single plan is selected.
+- Avoid plans that do not include screen-type-specific no-go notes.

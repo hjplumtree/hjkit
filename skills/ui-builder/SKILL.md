@@ -23,9 +23,12 @@ Workflow:
 - Name the screen type: dashboard, landing, tool, settings, or other.
 - Name the success condition: what does "feels shipped" mean for this specific product?
 - Name the focal point and the expected reading path.
+- Choose the most likely archetype before choosing visual details.
+- Define the dominant surface and the supporting surfaces.
 - Note any trust signals, proof points, or confirmation cues the screen needs.
 - If information is missing, infer conservatively and state assumptions briefly.
 - Check the project's existing shadcn/ui components and Tailwind setup first.
+- If the project has a `themes/` directory, read its preset files before choosing tone.
 - If the project has `components/` or `examples/` directories, use the closest matching local composition as the structural baseline.
 - Wrap the screen in the outermost layout shell the project provides, such as `PageShell`, `layout.tsx`, or an equivalent wrapper.
 - Treat wrapper containment as a hard constraint: no content block should touch a wrapper edge unless full-bleed is intentional.
@@ -35,10 +38,10 @@ Workflow:
 - Prefer established UI primitives over raw elements.
 
 Screen expectations:
-- Dashboard: structured, data-focused, easy to scan.
-- Landing: clear value proposition plus one dominant CTA.
-- Tool: main action first, then flow and result states.
-- Settings: simple, low noise, clear save pattern.
+- Dashboard: structured, data-focused, easy to scan, with a queue or summary rail first.
+- Landing: clear value proposition plus one dominant CTA, usually in a split or editorial hero.
+- Tool: main action first, then flow and result states, with the input and output clearly separated.
+- Settings: simple, low noise, clear save pattern, grouped by task rather than by control type.
 
 2. Explore
 - Propose exactly 2 directions by default.
@@ -56,7 +59,15 @@ Screen expectations:
 
 4. Build
 - Build the strongest direction, not a compromise between options.
+- Before code, write a Pseudo-DOM plan for the selected direction.
+- Use a structured plan, not prose.
+- Match the canonical format in `project-template/examples/plan-schema.md`.
+- Match the screen-specific example block in `project-template/examples/plan-schema.md` for the chosen screen type.
+- The plan must name the family, layout, focal point, primary action, surface roles, states, and no-go notes.
+- Start with the shell, focal point, and surface roles before adding detail.
 - If the first draft feels weak during construction, change the structure before adding detail.
+- Use the chosen archetype as the composition recipe, not as decoration.
+- If multiple candidates were drafted, keep only one plan and discard the rest before coding.
 - Describe the final composition in plain language.
 - Avoid technical review phrases like "improved density balance" or "strong hierarchy".
 - Prefer product language such as "the main action sits at the top and nothing else competes with it."
@@ -106,6 +117,10 @@ Rules:
 - Build with reusable components first, raw elements last.
 - If an example composition exists for the screen type, use it as the structural baseline.
 - If a shadcn/ui component already covers the need, prefer it over a custom primitive.
+- Avoid centered-everything landing layouts unless the product genuinely needs them.
+- Avoid repeated equal-weight cards unless the repetition is the point.
+- Avoid using color just to make every block feel alive.
+- Avoid writing code before the plan is structurally clear.
 
 Final:
 UI must feel like a real shipped product.

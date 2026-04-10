@@ -1,0 +1,13 @@
+:root {
+  --hjkit-theme-name: sharp-product;
+  --hjkit-color-role: semantic;
+  --hjkit-font-body: "Inter", system-ui, sans-serif;
+  --hjkit-font-size-base: 14px;
+  --hjkit-line-height-base: 1.55;
+  --hjkit-radius-base: 8px;
+  --hjkit-shadow-card: 0 2px 8px rgb(15 23 42 / 0.08);
+  --hjkit-spacing-density: compact;
+  --hjkit-surface-contrast: moderate;
+  --hjkit-accent-density: focused;
+  --hjkit-motion-scale: minimal;
+}

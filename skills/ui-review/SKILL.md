@@ -26,9 +26,14 @@ Workflow:
 1. Analyze
 - Read the whole screen first.
 - Determine the screen type: dashboard, landing, tool, settings, or other.
+- Choose the likely archetype for that screen type and use it as the review lens.
+- If given a plan instead of code, review the plan as a Pseudo-DOM candidate, not as prose.
+- Compare the plan against `project-template/examples/plan-schema.md` before judging it.
+- Compare the plan against the matching screen-specific example block in `project-template/examples/plan-schema.md`.
 - Decompose the problem in this order: structure, hierarchy, density, spacing, CTA, type system, state coverage, generic feel.
 - Name the purpose, first impression, main focus, and biggest distraction.
 - Identify the focal point and the reading path.
+- Identify the dominant surface and whether the supporting surfaces have a job.
 - Note any orphaned labels, buttons, or cards.
 - Note whether the screen uses one spacing rhythm or multiple competing rhythms.
 - If given a URL, use the browser view as the source of truth.
@@ -44,12 +49,14 @@ Workflow:
 - Fix CTA prominence before ornamental detail.
 - Preserve strong parts of the current design.
 - Use this reference priority: project local `components/` → project local `examples/` → shadcn/ui → `DESIGN_SYSTEM.md`.
+- If the project has a `themes/` directory, use it to judge whether the tone preset is being respected.
 - Prefer the project's existing shadcn/ui components over raw elements when an installed primitive exists.
 - Treat wrapper containment as a hard constraint: content touching a wrapper edge is a layout failure unless full-bleed is clearly intentional.
 - If the outer shell is weak, repair the shell before polishing internal blocks.
 - If a section does not earn its space, remove or merge it.
 - If the focal point is unclear, elevate one instead of adding more visual weight.
 - If the screen is structurally weak, change layout and grouping first.
+- If the screen feels generic, compare it to the archetype recipe before polishing anything.
 - If the user did not explain the problem clearly, identify the problem anyway.
 - If attention is scattered, adjust hierarchy, color, and CTA.
 - If density is wrong, adjust spacing and grouping.
@@ -57,6 +64,7 @@ Workflow:
 - If the problem is local, use a local fix.
 - If the problem is sectional, rewrite the section.
 - If the problem is structural, rewrite the screen.
+- If the plan is prose-only, reject it and demand structure.
 
 3. Intervention levels
 - Level 1: local fix.
@@ -112,6 +120,9 @@ Rules:
 - If density is wrong, adjust grouping and spacing before visual styling.
 - Use the closest example composition as a reference, not a template.
 - If a shadcn/ui component already solves the problem, use it instead of inventing a local primitive.
+- Avoid recommending cosmetic changes when the structure is the real issue.
+- Avoid equal-weight card grids unless the screen type calls for them.
+- Avoid accepting plans that do not show family, layout, surface roles, and no-go notes.
 
 Output format:
 - One short verdict sentence: what this screen is doing and what changed most.

@@ -1,0 +1,13 @@
+:root {
+  --hjkit-theme-name: utilitarian;
+  --hjkit-color-role: semantic;
+  --hjkit-font-body: "Inter", system-ui, sans-serif;
+  --hjkit-font-size-base: 14px;
+  --hjkit-line-height-base: 1.5;
+  --hjkit-radius-base: 4px;
+  --hjkit-shadow-card: 0 1px 2px rgb(15 23 42 / 0.05);
+  --hjkit-spacing-density: compact;
+  --hjkit-surface-contrast: direct;
+  --hjkit-accent-density: minimal;
+  --hjkit-motion-scale: minimal;
+}

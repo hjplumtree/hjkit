@@ -3,6 +3,11 @@
 - Is the product context clear?
 - Is the shipped-product expectation clear?
 - Is there one strong primary action?
+- Is the chosen archetype obvious?
+- Is there one dominant surface and clear supporting surfaces?
+- Is the plan structured as Pseudo-DOM instead of prose?
+- Does the plan match the canonical shape in `project-template/examples/plan-schema.md`?
+- Are there no-go notes for the rejected candidate?
 - Do the options differ in structure, not just decoration?
 - Does the chosen direction fit the problem?
 - Is the hierarchy clear?

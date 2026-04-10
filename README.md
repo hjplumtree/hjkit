@@ -32,7 +32,8 @@ This copies the project templates, links skills into
 `.gitignore`.
 
 The design references and example compositions stay in this repository and are
-used as read-only guidance by the skills.
+used as read-only guidance by the skills. Visual preset files are also copied
+into `your-project/themes` so the target project can own its tone pack.
 
 If `AGENTS.md` or `DESIGN_SYSTEM.md` already exist in the target project,
 `setup --repo` replaces them with the hjkit template files and keeps backups

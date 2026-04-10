@@ -6,6 +6,8 @@ export * from "./primitives/Panel";
 export * from "./primitives/Stack";
 export * from "./primitives/Cluster";
 
+export * from "./recipes";
+
 export * from "./patterns/PrimaryButton";
 export * from "./patterns/SecondaryButton";
 export * from "./patterns/Card";

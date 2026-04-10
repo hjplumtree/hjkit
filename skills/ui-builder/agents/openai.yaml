@@ -1,7 +1,7 @@
 interface:
   display_name: "HJKit UI Builder"
   short_description: "Create new product UI with strong direction"
-  default_prompt: "Use $hjkit-ui-builder to design a new product UI screen."
+  default_prompt: "Use $hjkit-ui-builder to design a new product UI screen. Start with a Pseudo-DOM plan."
 
 policy:
   allow_implicit_invocation: false

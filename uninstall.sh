@@ -65,6 +65,7 @@ if [ -n "$PROJECT_PATH" ]; then
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   remove_project_links "$PROJECT_SKILLS_DIR"
   rmdir "$PROJECT_PATH/.agents" 2>/dev/null || true
+  remove_path "$PROJECT_PATH/themes"
 fi
 
 # Legacy cleanup only: older installs copied skills into ~/.codex/.agents/skills/hjkit.
@@ -81,6 +82,7 @@ done
 if [ -n "$PROJECT_PATH" ]; then
   echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-builder"
   echo "  - $PROJECT_PATH/.agents/skills/hjkit-ui-review"
+  echo "  - $PROJECT_PATH/themes"
 fi
 echo
 echo "Note: uninstall does not automatically restore backups."

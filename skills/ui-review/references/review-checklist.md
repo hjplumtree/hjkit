@@ -1,11 +1,19 @@
 - Preserve strengths.
 - Name what is working before changing it.
+- Is the screen type and archetype obvious?
 - Improve hierarchy.
 - Improve spacing.
 - Reassess color, contrast, and CTA strength.
+- Is there one dominant surface?
+- If reviewing a plan, is it structured as a candidate tree instead of prose?
+- Does the plan match the canonical shape in `project-template/examples/plan-schema.md`?
+- Does the plan show family, layout, surface roles, and no-go notes?
+- Does the plan include the screen-type-specific guardrails from `project-template/examples/plan-schema.md`?
 - If the layout is weak, change the layout.
 - If the design already has a strong core, protect it.
 - If parts are broken, outdated, or ornamental, replace them.
 - Avoid flattening the visual identity.
 - Avoid over-normalizing distinctive layouts.
+- Avoid turning a product-specific screen into a generic card stack.
+- Avoid accepting a self-congratulatory plan without rejection criteria.
 - Aim for a materially better screen, not a slightly tidier one.

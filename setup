@@ -80,6 +80,16 @@ install_project_file_with_backup() {
   echo "Installed file: $target_file"
 }
 
+install_project_directory_with_backup() {
+  local source_dir="$1"
+  local target_dir="$2"
+
+  backup_if_exists "$target_dir"
+  rm -rf "$target_dir"
+  cp -R "$source_dir" "$target_dir"
+  echo "Installed directory: $target_dir"
+}
+
 ensure_project_gitignore_entry() {
   local gitignore_file="$1"
   local entry="$2"
@@ -125,6 +135,7 @@ if [ -n "$PROJECT_PATH" ]; then
   mkdir -p "$PROJECT_PATH"
   install_project_file_with_backup "$ROOT_DIR/project-template/AGENTS.md" "$PROJECT_PATH/AGENTS.md"
   install_project_file_with_backup "$ROOT_DIR/project-template/DESIGN_SYSTEM.md" "$PROJECT_PATH/DESIGN_SYSTEM.md"
+  install_project_directory_with_backup "$ROOT_DIR/project-template/themes" "$PROJECT_PATH/themes"
 
   PROJECT_SKILLS_DIR="$PROJECT_PATH/.agents/skills"
   mkdir -p "$PROJECT_SKILLS_DIR"
@@ -142,6 +153,7 @@ echo "  - $ROOT_DIR/skills/ui-review"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-builder"
 echo "  - symlinked to $OFFICIAL_SKILLS_DIR/hjkit-ui-review"
 echo "  - project template AGENTS.md / DESIGN_SYSTEM.md when --repo is used"
+echo "  - project template themes when --repo is used"
 echo
 echo "Next:"
 echo "1. In Codex, use hjkit-ui-builder or hjkit-ui-review."
