@@ -58,6 +58,8 @@ Every target project should establish a profile before screen work starts.
 
 ## Visual Presets
 Visual presets control the non-color tone of the system.
+- A preset should define a small but explicit token pack.
+- Typical tokens include: font body, font display, size scale, line height, radius base, radius card, shadow card, shadow elevated, shell spacing, section spacing, card spacing, spacing density, surface contrast, accent density, motion scale, motion duration, and motion easing.
 - Typography tone: body font, size scale, and line height.
 - Radius profile: sharp, balanced, or soft rounding.
 - Shadow depth: subtle, calm, or elevated treatment.

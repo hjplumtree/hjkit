@@ -42,6 +42,7 @@ overriding the project's own product logic.
 - Tone preset second.
 - Composition family third.
 - Plan fourth.
+- Stop here and apply the review filter before proceeding to build.
 - Code fifth.
 - Review sixth.
 

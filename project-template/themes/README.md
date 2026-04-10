@@ -12,9 +12,11 @@ Rules:
 - Treat these files as preset packs, not fixed brand themes.
 - Choose one preset per project unless the project explicitly supports multiple moods.
 - Use semantic color roles in the app, then map the actual values in the project theme layer.
+- Each preset should define body and display fonts, size scale, line height, radius, shadow, spacing density, surface contrast, accent density, and motion scale.
 
 Included presets:
 - `calm-pro.css`
 - `sharp-product.css`
 - `editorial.css`
 - `utilitarian.css`
+- `premium-calm.css`
