@@ -7,17 +7,19 @@ overriding the project's own product logic.
 
 ## Process
 1. Read `DESIGN_SYSTEM.md` first.
-2. Read the project profile and backend as environment, not as a choice.
-3. Identify the screen type.
-4. Choose the strongest composition family for that screen type before touching components.
-5. Write a Pseudo-DOM plan before any code, matching `examples/plan-schema.md`.
-6. Define the width, density, contrast budget, focal point, primary action, dominant surface, and supporting surfaces in the plan.
-7. Stop here and apply the review filter before proceeding to build.
-8. Use the project's existing shadcn/ui and Tailwind stack before writing raw elements.
-9. Rebuild structure before polishing if the screen feels weak.
-10. Refine spacing, hierarchy, grouping, amplitude, and contrast.
+2. Read the project's service category, trust profile, urgency level, and content type from `DESIGN_SYSTEM.md` before doing anything else.
+3. Read the project profile and backend as environment, not as a choice.
+4. Identify the screen type.
+5. Choose the strongest composition family for that screen type before touching components.
+6. Write a Pseudo-DOM plan before any code, matching `examples/plan-schema.md`.
+7. Define the width, density, contrast budget, focal point, primary action, dominant surface, and supporting surfaces in the plan.
+8. Stop here and apply the review filter before proceeding to build.
+9. Use the project's existing shadcn/ui and Tailwind stack before writing raw elements.
+10. Rebuild structure before polishing if the screen feels weak.
+11. Refine spacing, hierarchy, grouping, amplitude, and contrast.
 
 ## Project Profile Reading Rules
+- Treat service category, trust profile, urgency level, and content type as fixed project context.
 - Treat backend as fixed for the project, not per screen.
 - Treat the tone preset as fixed unless the project owner changes it.
 - Treat allowed families as the design boundary for the project.
@@ -39,13 +41,14 @@ overriding the project's own product logic.
 - Override these assumptions per project when needed.
 
 ## Required Order
-- Screen type first.
-- Tone preset second.
-- Composition family third.
-- Plan fourth.
+- Service context first.
+- Screen type second.
+- Tone preset third.
+- Composition family fourth.
+- Plan fifth.
 - Stop here and apply the review filter before proceeding to build.
-- Code fifth.
-- Review sixth.
+- Code sixth.
+- Review seventh.
 
 ## Rules
 - Avoid generic layouts.

@@ -20,6 +20,7 @@ Workflow:
 - Name the target user.
 - Name the core action.
 - Name the product context.
+- Read the project's service category, trust profile, urgency level, and content type from `DESIGN_SYSTEM.md` before choosing visual details.
 - Name the screen type: dashboard, landing, tool, settings, or other.
 - Name the success condition: what does "feels shipped" mean for this specific product?
 - Name the focal point and the expected reading path.
@@ -67,6 +68,7 @@ Screen expectations:
 - Match the canonical format in `project-template/examples/plan-schema.md`.
 - Match the screen-specific example block in `project-template/examples/plan-schema.md` for the chosen screen type.
 - The plan must name the family, layout, width, density, contrast budget, focal point, primary action, surface roles, states, and no-go notes.
+- The width, density, and contrast budget should come from the project profile and service context, then be adjusted only when the screen type clearly needs it.
 - Start with the shell, focal point, and surface roles before adding detail.
 - If the first draft feels weak during construction, change the structure before adding detail.
 - Use the chosen archetype as the composition recipe, not as decoration.
@@ -92,6 +94,7 @@ Screen expectations:
 
 5. Self-critique
 - Before outputting, check whether the screen still feels generic.
+- Before outputting, check whether the screen matches the project's service category and trust profile.
 - Before outputting, check whether the shell is wide enough for the screen type.
 - Before outputting, check whether the contrast budget lets the primary action visibly win.
 - Before outputting, check whether the CTA is strong enough.

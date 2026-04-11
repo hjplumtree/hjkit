@@ -93,6 +93,9 @@ Workflow:
 - Is the purpose obvious within the first read?
 - Does the hierarchy match the screen type?
 - Is the primary action singular and obvious?
+- Does the screen match the project's service category and trust profile?
+- Is the contrast budget appropriate for the project's urgency level?
+- Would the screen feel generic if the product name and copy were replaced?
 - Is the shell wide enough for the screen type?
 - Does the primary action visibly win against the surrounding surface?
 - Are secondary actions visually suppressed relative to the primary?

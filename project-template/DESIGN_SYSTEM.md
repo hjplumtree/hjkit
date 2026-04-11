@@ -7,15 +7,20 @@ consistent, structured, and shipped-looking.
 
 ## Design Operating Model
 Every screen should be built in this order:
-1. Classify the screen type.
-2. Choose the best archetype for that type.
-3. Define one focal point and one primary action.
-4. Pick a dominant surface and one or two supporting surfaces.
-5. Build the shell before the sections.
-6. Refine spacing, type, and contrast only after the structure feels right.
+1. Read the project profile and service context.
+2. Classify the screen type.
+3. Choose the best archetype for that type.
+4. Define one focal point and one primary action.
+5. Pick a dominant surface and one or two supporting surfaces.
+6. Build the shell before the sections.
+7. Refine spacing, type, and contrast only after the structure feels right.
 
 ## Project Profile
 Every target project should establish a profile before screen work starts.
+- Service category: `B2B SaaS` / `consumer product` / `marketing` / `ops tool` / `editorial` / `admin`.
+- Trust profile: `high-trust` / `conversion-led` / `neutral`.
+- Urgency level: `low` / `medium` / `high`.
+- Content type: `data-dense` / `narrative` / `action-led` / `form-heavy`.
 - Backend: `shadcn-backed`, `custom`, or `mixed`.
 - Tone preset: `calm-pro`, `sharp-product`, `editorial`, `utilitarian`, or `premium-calm`.
 - Allowed families: the screen families that may be used in this project.
@@ -62,12 +67,32 @@ Layout amplitude defines how wide and open a screen should feel. It is distinct 
 - balanced: default content width, most tool screens.
 - wide: expanded content width, clear breathing room, landing and dashboard default.
 - fluid: near full-bleed or full-bleed, reserved for hero-led or highly expressive blocks.
+- Service context sets the starting amplitude, contrast, and density before screen-type rules are applied.
+- Screen type still decides structure. Service context decides the starting tone and force.
 - Landing screens should usually default to wide or fluid hero treatment.
 - Dashboard screens should usually default to a wide shell with rail structure.
 - Tool screens should usually default to balanced width with clear input/result separation.
 - Settings screens should usually default to narrow or balanced width.
 - If a landing screen feels cramped, check amplitude before adjusting spacing.
 - A wide shell with tight content spacing is a composition failure.
+
+## Service Context Defaults
+Use the project profile's service context to set the starting values for amplitude, contrast, and density.
+Do not compute a new blend at screen time. Use the closest matching row as the project default.
+
+- B2B SaaS, trust-led: amplitude balanced / contrast medium / density compact.
+- B2B SaaS, conversion-led: amplitude balanced / contrast high / density compact.
+- consumer product: amplitude wide / contrast high / density balanced.
+- marketing: amplitude fluid / contrast high / density spacious.
+- ops tool: amplitude balanced / contrast medium / density compact.
+- editorial: amplitude wide / contrast medium / density spacious.
+- admin: amplitude narrow / contrast low / density compact.
+
+Rules:
+- Service context sets the starting values.
+- Screen type rules override only when the screen has a clear structural reason.
+- High urgency projects should keep the primary action visibly dominant.
+- High-trust projects should avoid overstated contrast unless the screen needs it.
 
 ## Visual Presets
 Visual presets control the non-color tone of the system.
@@ -266,5 +291,6 @@ See [`examples/plan-schema.md`](./examples/plan-schema.md) for concrete examples
 - Secondary actions should not compete with the primary action.
 - Card depth should be clearly different from shell depth.
 - Density should match the screen type instead of defaulting to a single rhythm.
+- The service context should be visible in the tone and force of the screen.
 - The design should still feel specific if the copy is replaced with another product.
 - If the result looks tidy but generic, the structure needs another pass.
