@@ -68,6 +68,7 @@ Workflow:
 - If the problem is sectional, rewrite the section.
 - If the problem is structural, rewrite the screen.
 - If the plan is prose-only, reject it and demand structure.
+- If the screen is structurally correct but still feels cramped or generic, do not solve it with utility-class tweaks alone; escalate to a section or screen rewrite.
 
 3. Intervention levels
 - Level 1: local fix.
@@ -76,6 +77,8 @@ Workflow:
   - Use when one major region is weak, but the rest of the screen still works.
 - Level 3: screen rewrite.
   - Use when the screen feels generic, the hierarchy is wrong, or the layout itself is fighting the product goal.
+- If the layout is generic or the shell amplitude is wrong, do not use Level 1.
+- If the screen feels structurally correct but still cramped, prefer Level 2 or Level 3 over micro-fixes.
 
 4. Improve
 - fix spacing

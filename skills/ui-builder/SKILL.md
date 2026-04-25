@@ -60,8 +60,11 @@ Screen expectations:
 - Choose one direction.
 - Briefly justify it based on clarity, product fit, core action visibility, screen type fit, and whether it avoids unnecessary decoration.
 - Say why the rejected direction loses.
+- If the two directions are only cosmetic variants, stop and regenerate structurally different candidates before selecting one.
 
 4. Build
+- Phase 1 is design-only. Phase 2 is code-only.
+- Do not write React/Tailwind code until one direction has been selected and the plan has cleared the review gate.
 - Build the strongest direction, not a compromise between options.
 - Before code, write a Pseudo-DOM plan for the selected direction.
 - Use a structured plan, not prose.
@@ -73,6 +76,7 @@ Screen expectations:
 - If the first draft feels weak during construction, change the structure before adding detail.
 - Use the chosen archetype as the composition recipe, not as decoration.
 - If multiple candidates were drafted, keep only one plan and discard the rest before coding.
+- If the screen still feels cramped or generic at the plan stage, return to Explore and Select rather than polishing the same layout.
 - Describe the final composition in plain language.
 - Avoid technical review phrases like "improved density balance" or "strong hierarchy".
 - Prefer product language such as "the main action sits at the top and nothing else competes with it."
@@ -129,6 +133,7 @@ Rules:
 - Avoid repeated equal-weight cards unless the repetition is the point.
 - Avoid using color just to make every block feel alive.
 - Avoid writing code before the plan is structurally clear.
+- If the selected direction and plan are weak, do not "fix" them with code. Rework the structure first.
 
 Final:
 UI must feel like a real shipped product.

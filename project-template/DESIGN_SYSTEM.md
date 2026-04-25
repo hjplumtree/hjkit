@@ -14,6 +14,7 @@ Every screen should be built in this order:
 5. Pick a dominant surface and one or two supporting surfaces.
 6. Build the shell before the sections.
 7. Refine spacing, type, and contrast only after the structure feels right.
+8. Do not move from plan to code until one candidate has been selected and the review filter has accepted it.
 
 ## Project Profile
 Every target project should establish a profile before screen work starts.

@@ -50,6 +50,13 @@ overriding the project's own product logic.
 - Code sixth.
 - Review seventh.
 
+## Phase Gate
+- Phase 1 ends after the Pseudo-DOM plan is written.
+- Phase 2 begins only after one candidate has been selected and the review filter has accepted or explicitly requested a structural rewrite.
+- Do not merge Phase 1 and Phase 2 in a single pass.
+- If two candidates differ only in color, padding, or other cosmetic details, reject them and redraw the structure.
+- If the screen still feels cramped or generic, return to the plan and change the layout rather than polishing the current one.
+
 ## Rules
 - Avoid generic layouts.
 - Avoid default Tailwind look.
