@@ -1,26 +1,26 @@
 export * from "./cn";
 
-// Core layout primitives. Use these first for shells, sections, and grouping.
-export * from "./primitives/PageShell";
-export * from "./primitives/Section";
-export * from "./primitives/Panel";
-export * from "./primitives/Stack";
-export * from "./primitives/Cluster";
+// Core layout primitives.
+export * from "./primitives/PageShell"; // every page. outermost wrapper. never skip.
+export * from "./primitives/Section"; // every major content block. controls vertical rhythm.
+export * from "./primitives/Panel"; // grouped surface with border or shadow. always include padding.
+export * from "./primitives/Stack"; // vertical list. consistent gap between items.
+export * from "./primitives/Cluster"; // horizontal inline group. tags, buttons, badges.
 
-// Reusable patterns. Prefer these over raw elements when a pattern already exists.
-export * from "./patterns/PrimaryButton";
-export * from "./patterns/SecondaryButton";
-export * from "./patterns/Card";
-export * from "./patterns/Badge";
-export * from "./patterns/Callout";
-export * from "./patterns/FieldGroup";
-export * from "./patterns/Toolbar";
-export * from "./patterns/DataList";
+// Reusable patterns.
+export * from "./patterns/PrimaryButton"; // one per screen. the only dominant action.
+export * from "./patterns/SecondaryButton"; // suppressed visually relative to primary.
+export * from "./patterns/Card"; // grouped content surface. always has padding.
+export * from "./patterns/Badge"; // inline label. status or category only.
+export * from "./patterns/Callout"; // prominent inline message. warning or tip.
+export * from "./patterns/FieldGroup"; // labeled input group. settings and forms.
+export * from "./patterns/Toolbar"; // top action bar. filter and command row.
+export * from "./patterns/DataList"; // key-value or labeled data rows.
 
-// Approved screen recipes. Use these before inventing a new composition.
+// Approved screen recipes.
 export * from "./recipes";
 
-// State components. Use these for empty, loading, and error coverage.
-export * from "./states/EmptyState";
-export * from "./states/LoadingState";
-export * from "./states/ErrorState";
+// State components.
+export * from "./states/EmptyState"; // no data yet. always show a recovery action.
+export * from "./states/LoadingState"; // skeleton or spinner. never show blank space.
+export * from "./states/ErrorState"; // failure. always show a retry or fallback path.

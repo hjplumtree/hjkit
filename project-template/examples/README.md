@@ -8,6 +8,7 @@ Each example is a screen family, not a generic layout:
 - `ToolExample` shows an action-led tool family with input, result, and state coverage.
 - `SettingsExample` shows a form-led settings family with one save path.
 - `plan-schema.md` shows the canonical Pseudo-DOM format that builder and review must use for landing, dashboard, tool, and settings screens.
+- The code examples live in `hjkit/` so they stay separate from the docs and plan reference.
 
 Use them as:
 - structural baselines for new screens
