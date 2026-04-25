@@ -160,6 +160,32 @@ These are the reusable structural recipes that can be promoted later if they rec
 - Section stack: a narrative layout that uses ordered sections to tell the story.
 - Promote these only after a pattern appears in multiple real screens.
 
+## Component Ladder
+Use the smallest component that can express the job clearly.
+1. Primitives first: `PageShell`, `Section`, `Panel`, `Stack`, `Cluster`.
+2. Patterns next: `PrimaryButton`, `SecondaryButton`, `Card`, `Badge`, `Callout`, `FieldGroup`, `Toolbar`, `DataList`.
+3. Recipes next: `HeroShell`, `ProofRail`, `QueueRail`, `InputResultShell`, `TaskFormShell`, `SectionStack`.
+4. Screen composition next: landing, dashboard, tool, or settings layouts.
+5. Project-local overrides last, only when the existing ladder cannot express the structure cleanly.
+
+Rules:
+- Do not use a raw wrapper when a primitive already solves the layout role.
+- Do not create a new recipe unless an existing recipe clearly fails the screen type.
+- Do not create a new pattern unless the same pattern appears across multiple screens.
+- Promote upward only after repetition is visible in real screens.
+
+## Component Promotion Rules
+Promote a pattern from project-local to `hjkit` only when:
+1. It appears in two or more different screens without modification.
+2. It cannot be expressed by composing existing primitives and recipes.
+3. It is service-agnostic and would work in any project using `hjkit`.
+4. `ui-review` has requested the same pattern more than once.
+
+Do not promote:
+- Service-specific components such as `AffiliateCard` or `CouponBadge`.
+- One-off layouts that will not repeat.
+- Cosmetic wrappers that only change padding, radius, or color.
+
 ## Plan Schema
 Plans must be written as structured text, not prose.
 - Use a pseudo-DOM tree or nested outline.

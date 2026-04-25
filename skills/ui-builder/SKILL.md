@@ -34,6 +34,9 @@ Workflow:
 - Check the project's existing shadcn/ui components and Tailwind setup first.
 - If the project has a `themes/` directory, read its preset files before choosing tone.
 - If the project has `components/` or `examples/` directories, use the closest matching local composition as the structural baseline.
+- Read the component ladder in `DESIGN_SYSTEM.md` and choose the smallest component that can express the job clearly.
+- Prefer `project-template/components/primitives/` first, then `project-template/components/patterns/`, then `project-template/components/recipes/`.
+- Treat raw `div` wrappers as the last resort, not the default.
 - Wrap the screen in the outermost layout shell the project provides, such as `PageShell`, `layout.tsx`, or an equivalent wrapper.
 - Treat wrapper containment as a hard constraint: no content block should touch a wrapper edge unless full-bleed is intentional.
 - If the shell is weak, fix the shell before designing internal sections.
@@ -65,6 +68,9 @@ Screen expectations:
 4. Build
 - Phase 1 is design-only. Phase 2 is code-only.
 - Do not write React/Tailwind code until one direction has been selected and the plan has cleared the review gate.
+- Build from the component ladder first: primitives, then patterns, then recipes, then screen composition.
+- If a primitive or pattern already exists for a role, use it instead of inventing a raw wrapper.
+- Create a new local component only when the existing ladder cannot express the structure cleanly.
 - Build the strongest direction, not a compromise between options.
 - Before code, write a Pseudo-DOM plan for the selected direction.
 - Use a structured plan, not prose.

@@ -58,6 +58,7 @@ Workflow:
 - If the focal point is unclear, elevate one instead of adding more visual weight.
 - If the screen is structurally weak, change layout and grouping first.
 - If the screen feels generic, compare it to the archetype recipe before polishing anything.
+- If the screen bypassed an available primitive, pattern, or recipe, treat that as a structural smell before polishing anything.
 - If the user did not explain the problem clearly, identify the problem anyway.
 - If attention is scattered, adjust hierarchy, color, and CTA.
 - If density is wrong, adjust spacing and grouping.
@@ -69,6 +70,7 @@ Workflow:
 - If the problem is structural, rewrite the screen.
 - If the plan is prose-only, reject it and demand structure.
 - If the screen is structurally correct but still feels cramped or generic, do not solve it with utility-class tweaks alone; escalate to a section or screen rewrite.
+- If the screen could have used an existing primitive, pattern, or recipe but did not, call that out as a component-usage failure.
 
 3. Intervention levels
 - Level 1: local fix.
@@ -140,7 +142,8 @@ Rules:
 - Avoid accepting plans that do not show family, layout, surface roles, and no-go notes.
 
 Output format:
-- One short verdict sentence: what this screen is doing and what changed most.
+- One short verdict sentence: what this screen is doing and what its primary failure is.
+- What failed and why (structural failure, amplitude failure, contrast failure, or service fit failure).
 - What was kept.
 - What was improved.
 - What was replaced or removed.

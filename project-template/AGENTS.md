@@ -40,6 +40,18 @@ overriding the project's own product logic.
 - Default examples assume shadcn/ui and Tailwind CSS.
 - Override these assumptions per project when needed.
 
+## Component Usage
+- Before writing any layout code, check `project-template/components/primitives/` first.
+- Use `PageShell` as the outermost wrapper for every screen.
+- Use `Section`, `Panel`, `Stack`, and `Cluster` before writing raw `div` wrappers.
+- Check `project-template/components/recipes/` before inventing a new screen structure.
+- `HeroShell`, `ProofRail`, `QueueRail`, `InputResultShell`, `TaskFormShell`, and `SectionStack` are the approved starting points.
+- Use `project-template/components/patterns/` before creating a new button, card, callout, or field group.
+- Do not write raw `div` wrappers where a primitive or pattern already exists.
+- Do not create a new recipe unless none of the existing recipes fits the screen type.
+- Do not create a new pattern unless the structure repeats across multiple screens.
+- If the screen still feels weak after using the available ladder, return to the plan before writing code.
+
 ## Required Order
 - Service context first.
 - Screen type second.
