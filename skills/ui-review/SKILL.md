@@ -53,6 +53,8 @@ Workflow:
 - If the project has a `themes/` directory, use it to judge whether the tone preset is being respected.
 - Prefer the project's existing shadcn/ui components over raw elements when an installed primitive exists.
 - Treat wrapper containment as a hard constraint: content touching a wrapper edge is a layout failure unless full-bleed is clearly intentional.
+- Content must not touch a wrapper edge unless the layout is intentionally full-bleed.
+- Every panel must include internal padding.
 - If the outer shell is weak, repair the shell before polishing internal blocks.
 - If a section does not earn its space, remove or merge it.
 - If the focal point is unclear, elevate one instead of adding more visual weight.
