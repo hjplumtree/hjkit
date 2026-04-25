@@ -29,7 +29,7 @@ export function DashboardExample() {
         </Toolbar>
 
         <section className="grid gap-6 lg:grid-cols-[1.45fr_0.85fr]">
-          <SectionStack className="max-w-none">
+          <SectionStack width="fluid">
             <QueueRail
               eyebrow="Queue"
               title="Tasks that need attention"
@@ -68,7 +68,7 @@ export function DashboardExample() {
             </ProofRail>
           </SectionStack>
 
-          <SectionStack className="max-w-none">
+          <SectionStack width="fluid">
             <Panel padding="lg" className="bg-surface-offset">
               <Section
                 eyebrow="Exceptions"

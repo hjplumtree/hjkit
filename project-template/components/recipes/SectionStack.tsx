@@ -4,11 +4,24 @@ import { Stack } from "../primitives/Stack";
 
 type SectionStackProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
+  width?: "narrow" | "balanced" | "wide" | "fluid";
 };
 
-export function SectionStack({ children, className, ...props }: SectionStackProps) {
+const widthClasses = {
+  narrow: "max-w-3xl",
+  balanced: "max-w-4xl",
+  wide: "max-w-5xl",
+  fluid: "max-w-none",
+};
+
+export function SectionStack({
+  children,
+  width = "balanced",
+  className,
+  ...props
+}: SectionStackProps) {
   return (
-    <Stack gap="xl" className={cn("max-w-3xl", className)} {...props}>
+    <Stack gap="xl" className={cn(widthClasses[width], className)} {...props}>
       {children}
     </Stack>
   );

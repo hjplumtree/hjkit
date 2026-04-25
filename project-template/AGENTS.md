@@ -50,6 +50,10 @@ overriding the project's own product logic.
 - Do not write raw `div` wrappers where a primitive or pattern already exists.
 - Do not create a new recipe unless none of the existing recipes fits the screen type.
 - Do not create a new pattern unless the structure repeats across multiple screens.
+- Treat content touching or nearly touching a wrapper edge as a containment failure, not a spacing preference.
+- Use Section > Panel > content for large narrative blocks; do not let a single Card act as the section shell.
+- Give Section-level breathing room to large blocks instead of relying on `space-y` alone.
+- Avoid `padding="sm"` on Panel for content-heavy surfaces.
 - If the screen still feels weak after using the available ladder, return to the plan before writing code.
 
 ## Required Order
@@ -68,6 +72,7 @@ overriding the project's own product logic.
 - Do not merge Phase 1 and Phase 2 in a single pass.
 - If two candidates differ only in color, padding, or other cosmetic details, reject them and redraw the structure.
 - If the screen still feels cramped or generic, return to the plan and change the layout rather than polishing the current one.
+- If content touches or nearly touches a wrapper edge, do not treat it as a polish issue; redo the section or screen structure.
 
 ## Rules
 - Avoid generic layouts.

@@ -22,7 +22,13 @@ export function QueueRail({
 }: QueueRailProps) {
   return (
     <Panel padding="lg" className={cn(className)} {...props}>
-      <Section eyebrow={eyebrow} title={title} description={description} action={action}>
+      <Section
+        density="tight"
+        eyebrow={eyebrow}
+        title={title}
+        description={description}
+        action={action}
+      >
         {children}
       </Section>
     </Panel>

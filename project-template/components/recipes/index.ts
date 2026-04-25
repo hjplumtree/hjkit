@@ -8,5 +8,5 @@ export * from "./QueueRail";
 export * from "./InputResultShell";
 // TaskFormShell — settings layouts with one obvious save path.
 export * from "./TaskFormShell";
-// SectionStack — ordered narrative sections for landing or story-driven flows.
+// SectionStack — ordered narrative sections for landing or story-driven flows; width is caller-controlled.
 export * from "./SectionStack";

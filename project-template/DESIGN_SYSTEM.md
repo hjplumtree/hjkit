@@ -158,6 +158,7 @@ These are the reusable structural recipes that can be promoted later if they rec
 - Input-result shell: a tool layout that keeps entry and output visually separate.
 - Task form shell: a settings layout that groups fields and keeps one save path.
 - Section stack: a narrative layout that uses ordered sections to tell the story.
+- Section stack: a narrative layout that uses ordered sections to tell the story; the measure should be controlled by the caller, not hard-coded to one width.
 - Promote these only after a pattern appears in multiple real screens.
 
 ## Component Ladder
@@ -173,6 +174,8 @@ Rules:
 - Do not create a new recipe unless an existing recipe clearly fails the screen type.
 - Do not create a new pattern unless the same pattern appears across multiple screens.
 - Promote upward only after repetition is visible in real screens.
+- Use Section-level breathing room for large narrative blocks; `space-y` alone is not section separation.
+- Do not use a single Card as the outer shell for a large narrative section when Section > Panel > content is available.
 
 ## Component Promotion Rules
 Promote a pattern from project-local to `hjkit` only when:
@@ -274,6 +277,8 @@ See [`examples/plan-schema.md`](./examples/plan-schema.md) for concrete examples
 - Multiple equal-weight primary actions are a hierarchy failure.
 - A generic 3-card grid without structural justification is a failure.
 - Cramped content with correct alignment is a spacing failure.
+- A section title with no vertical breathing room is a containment failure.
+- A large narrative block that relies on a single Card slab is a containment failure.
 - A generic feel on a product-specific screen is a structural failure.
 - Competing focal points are a composition failure.
 - Orphaned labels, buttons, or cards are a layout failure.
@@ -288,6 +293,8 @@ See [`examples/plan-schema.md`](./examples/plan-schema.md) for concrete examples
 ## Non-Negotiables
 - No content block may touch a wrapper edge unless full-bleed is intentional.
 - No panel may be missing internal padding.
+- No large narrative block may rely on `space-y` alone for section separation.
+- No section title may sit directly on the wrapper edge without section-level breathing room.
 - No screen may have more than one primary action.
 - No screen may have more than one focal point.
 - No screen may lack one obvious reading path.

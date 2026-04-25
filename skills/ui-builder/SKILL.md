@@ -39,6 +39,8 @@ Workflow:
 - Treat raw `div` wrappers as the last resort, not the default.
 - Wrap the screen in the outermost layout shell the project provides, such as `PageShell`, `layout.tsx`, or an equivalent wrapper.
 - Treat wrapper containment as a hard constraint: no content block should touch a wrapper edge unless full-bleed is intentional.
+- For large narrative blocks, prefer `Section > Panel > content` over a single `Card` slab.
+- If a section title sits on or near the wrapper edge, fix the section structure before polishing spacing.
 - If the shell is weak, fix the shell before designing internal sections.
 - Use the closest existing project components before introducing new abstractions.
 - Use `PrimaryButton` only once per screen.

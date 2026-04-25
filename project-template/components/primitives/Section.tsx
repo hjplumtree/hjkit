@@ -6,6 +6,13 @@ type SectionProps = HTMLAttributes<HTMLElement> & {
   eyebrow?: string;
   description?: string;
   action?: ReactNode;
+  density?: "tight" | "default" | "spacious";
+};
+
+const densityClasses = {
+  tight: "py-4 sm:py-6",
+  default: "py-6 sm:py-8",
+  spacious: "py-8 sm:py-12",
 };
 
 export function Section({
@@ -13,12 +20,13 @@ export function Section({
   eyebrow,
   description,
   action,
+  density = "default",
   className,
   children,
   ...props
 }: SectionProps) {
   return (
-    <section className={cn("space-y-4", className)} {...props}>
+    <section className={cn(densityClasses[density], "space-y-4", className)} {...props}>
       {(eyebrow || title || description || action) && (
         <header className="flex items-start justify-between gap-4">
           <div className="space-y-1">

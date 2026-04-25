@@ -22,12 +22,12 @@ export function TaskFormShell({
   ...props
 }: TaskFormShellProps) {
   return (
-    <Panel padding="lg" className={cn(className)} {...props}>
-      <Stack gap="lg">
-        <Section eyebrow={eyebrow} title={title} description={description}>
-          {children}
-        </Section>
-        {footer ? <div>{footer}</div> : null}
+      <Panel padding="lg" className={cn(className)} {...props}>
+        <Stack gap="lg">
+          <Section density="tight" eyebrow={eyebrow} title={title} description={description}>
+            {children}
+          </Section>
+          {footer ? <div>{footer}</div> : null}
       </Stack>
     </Panel>
   );

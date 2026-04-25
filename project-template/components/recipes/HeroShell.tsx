@@ -37,7 +37,7 @@ export function HeroShell({
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/70 via-primary/25 to-transparent" />
       <div className={cn("relative", hasAside && "grid gap-6 lg:grid-cols-[1.15fr_0.85fr]")}>
         <Stack gap="lg">
-          <Section eyebrow={eyebrow} title={title} description={description} />
+          <Section density="tight" eyebrow={eyebrow} title={title} description={description} />
 
           {(primaryAction || secondaryAction) ? (
             <Cluster>

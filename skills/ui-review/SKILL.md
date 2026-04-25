@@ -68,6 +68,7 @@ Workflow:
 - If the problem is local, use a local fix.
 - If the problem is sectional, rewrite the section.
 - If the problem is structural, rewrite the screen.
+- Treat containment failures as structural failures: content touching or nearly touching a wrapper edge should trigger Level 2 or Level 3, not utility-class tweaks alone.
 - If the plan is prose-only, reject it and demand structure.
 - If the screen is structurally correct but still feels cramped or generic, do not solve it with utility-class tweaks alone; escalate to a section or screen rewrite.
 - If the screen could have used an existing primitive, pattern, or recipe but did not, call that out as a component-usage failure.
@@ -79,6 +80,7 @@ Workflow:
   - Use when one major region is weak, but the rest of the screen still works.
 - Level 3: screen rewrite.
   - Use when the screen feels generic, the hierarchy is wrong, or the layout itself is fighting the product goal.
+- Containment failures always trigger Level 2 or Level 3.
 - If the layout is generic or the shell amplitude is wrong, do not use Level 1.
 - If the screen feels structurally correct but still cramped, prefer Level 2 or Level 3 over micro-fixes.
 
@@ -110,6 +112,8 @@ Workflow:
 - Did we preserve what already worked?
 - Did we avoid over-normalizing a distinctive layout?
 - Does any content block touch or nearly touch a wrapper edge?
+- Does any major block rely on a single Card or Panel as the whole section shell?
+- Does any section title sit too close to the wrapper edge?
 - Is the outer shell containing the screen cleanly?
 - Are there any orphaned labels, buttons, or cards?
 - Does the screen use one spacing rhythm and one radius language consistently?
